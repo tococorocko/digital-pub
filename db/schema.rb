@@ -10,10 +10,80 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_120455) do
+ActiveRecord::Schema.define(version: 2018_11_26_153657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_chats_on_game_id"
+    t.index ["team_id"], name: "index_chats_on_team_id"
+  end
+
+  create_table "favorite_leagues", force: :cascade do |t|
+    t.bigint "league_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_favorite_leagues_on_league_id"
+    t.index ["user_id"], name: "index_favorite_leagues_on_user_id"
+  end
+
+  create_table "favorite_teams", force: :cascade do |t|
+    t.bigint "team_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_favorite_teams_on_team_id"
+    t.index ["user_id"], name: "index_favorite_teams_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "team_a_id"
+    t.bigint "team_b_id"
+    t.bigint "league_id"
+    t.datetime "kick_off_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_games_on_league_id"
+    t.index ["team_a_id"], name: "index_games_on_team_a_id"
+    t.index ["team_b_id"], name: "index_games_on_team_b_id"
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_chat_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_chat_id"], name: "index_messages_on_user_chat_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_chats", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_user_chats_on_chat_id"
+    t.index ["user_id"], name: "index_user_chats_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +93,21 @@ ActiveRecord::Schema.define(version: 2018_11_26_120455) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chats", "games"
+  add_foreign_key "chats", "teams"
+  add_foreign_key "favorite_leagues", "leagues"
+  add_foreign_key "favorite_leagues", "users"
+  add_foreign_key "favorite_teams", "teams"
+  add_foreign_key "favorite_teams", "users"
+  add_foreign_key "games", "leagues"
+  add_foreign_key "games", "teams", column: "team_a_id"
+  add_foreign_key "games", "teams", column: "team_b_id"
+  add_foreign_key "messages", "user_chats"
+  add_foreign_key "user_chats", "chats"
+  add_foreign_key "user_chats", "users"
 end
