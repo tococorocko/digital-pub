@@ -1,0 +1,61 @@
+.chat-name {
+  background-color: $light-green;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: white;
+    margin: 0;
+  }
+}
+.chat-content {
+  overflow-y: scroll;
+  height: 60vh;
+}
+.my-message-content, .other-message-content {
+  min-width: 10vw;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  p {
+    color: white;
+    margin: 0;
+  }
+}
+.user-name {
+  font-size: 12px;
+  color: black;
+  margin: 7px;
+}
+
+.my-message-content {
+  background-color: #aaa;
+}
+
+.other-message-content {
+  background-color: $green;
+}
+
+.mine {
+  text-align: right;
+  margin-left: 10vw;
+}
+
+.other {
+  margin-right: 10vw;
+}
+.add-message {
+  position: fixed;
+  width: 100vw;
+  bottom: 5px;
+}
+
+.form-group {
+  border-radius: 10px;
+  margin: 5px;
+}
+
+form>input {
+  margin-left: 5px;
+}

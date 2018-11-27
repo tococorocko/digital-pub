@@ -8,9 +8,9 @@
 
 
 User.destroy_all
+Game.destroy_all
 Team.destroy_all
 League.destroy_all
-Game.destroy_all
 
 
 
@@ -40,40 +40,67 @@ user_4 = User.create!({
   password: "mario.hilsenrath@gmail.com"
 })
 
+puts 'Users created'
 # TEAMS #######################################
 
 team_1 = Team.new({
   name: "FC Barcelona"
 })
-team_1.logo = "https://www.ogol.com.br/img/logos/equipas/40_imgbank.png"
+team_1.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329234/Barcelona.png"
 team_1.save
 
 team_2 = Team.new({
   name: "Atlético de Madrid"
 })
-team_2.logo = "https://upload.wikimedia.org/wikipedia/pt/1/19/AtleticoMadrid2017.png"
+team_2.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329234/Atletico_Madrid_logo_neu.png"
 team_2.save
 
 team_3 = Team.new({
   name: "Manchester United FC"
 })
-team_3.logo = "https://upload.wikimedia.org/wikipedia/pt/b/b6/Manchester_United_FC_logo.png.png"
+team_3.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329235/Manchester_United_FC_logo.png"
 team_3.save
 
+team_4 = Team.new({
+  name: "Manchester City FC"
+})
+team_4.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329235/Manchester_City_FC_badge.svg.png"
+team_4.save
+
+team_5 = Team.new({
+  name: "Liverpool FC"
+})
+team_5.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329235/Liverpool_FC.png"
+team_5.save
+
+puts 'Teams created'
 # LEAGUES #######################################
 
 league_1 = League.new({
   name: "La liga"
 })
-league_1.logo = "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F15.png"
+league_1.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329234/La_liga.png"
 league_1.save
 
 league_2 = League.new({
-  name: "UEFA Champions League"
+  name: "Premier League"
 })
-league_2.logo = "https://upload.wikimedia.org/wikipedia/pt/9/9b/116px-UEFA_Champions_League_logo_2_svg.png"
+league_2.logo = "http://res.cloudinary.com/digital-pub/image/upload/v1543333633/Premier_League_Logo.png"
 league_2.save
 
+league_3 = League.new({
+  name: "Bundesliga"
+})
+league_3.logo = "http://res.cloudinary.com/digital-pub/image/upload/v1543333995/BundesLiga.png"
+league_3.save
+
+league_4 = League.new({
+  name: "Serie A"
+})
+league_4.logo = "https://res.cloudinary.com/digital-pub/image/upload/c_fit,w_750/v1543329234/Serie_A_Logo__ab_2018.png"
+league_4.save
+
+puts 'Leagues created'
 # GAMES #######################################
 
 game_1 = Game.create!({
@@ -85,18 +112,33 @@ game_1 = Game.create!({
 
 game_2 = Game.create!({
   team_a_id: team_3.id,
-  team_b_id: team_1.id,
+  team_b_id: team_4.id,
   league_id: league_2.id,
   kick_off_time: "Wen, 05 Dec 2018 14:00:00"
 })
 
 game_3 = Game.create!({
-  team_a_id: team_2.id,
-  team_b_id: team_1.id,
+  team_a_id: team_3.id,
+  team_b_id: team_5.id,
   league_id: league_2.id,
   kick_off_time: "Sat, 08 Dec 2018 10:00:00"
 })
 
+game_4 = Game.create!({
+  team_a_id: team_4.id,
+  team_b_id: team_5.id,
+  league_id: league_2.id,
+  kick_off_time: "Sun, 09 Dec 2018 10:00:00"
+})
+
+game_5 = Game.create!({
+  team_a_id: team_2.id,
+  team_b_id: team_1.id,
+  league_id: league_1.id,
+  kick_off_time: "Sat, 08 Dec 2018 16:00:00"
+})
+
+puts 'Games created'
 # FAVOURITE TEAMS #######################################
 
 user_1_fav_team = FavoriteTeam.create!({
@@ -125,3 +167,6 @@ user_2_fav_league = FavoriteLeague.create!({
   league_id: league_2.id,
   user_id: user_2.id
 })
+puts 'Added favorite teams & leagues to users'
+
+puts 'All done! Enjoy Mario\'s amazing seed :)'

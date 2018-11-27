@@ -5,15 +5,45 @@
   </div>
 </div>
 
-<div class="top-games">
-  <div class="title">
-    <h2>My top games</h2>
-  </div>
+<% if current_user.present? %>
 
-  <div class="game-list">
+  <div class="top-games">
+    <div class="title">
+      <h2>My top games</h2>
+    </div>
 
+    <div class="game-list">
+    <% @favteams.each do |t| %>
+      <% t.team.games.each do |g| %>
+        <div class='game-item'>
+          <%= link_to '/' do %>
+            <div class="col-xs-4 team-name">
+              <% if g.team_a.name.length <= 18 %>
+                <p><%= g.team_a.name %></p>
+              <% else %>
+                <p><%= g.team_a.name[0..15] %>...</p>
+              <% end %>
+            </div>
+            <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+            <div class="col-xs-2 datetime">
+              <p style="font-size: 10px"><%= g.kick_off_time.strftime("%d-%b") %></p>
+              <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
+            </div>
+            <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+            <div class="col-xs-4 team-name">
+              <% if g.team_b.name.length <= 18 %>
+                <p><%= g.team_b.name %></p>
+              <% else %>
+                <p><%= g.team_b.name[0..15] %>...</p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="leagues">
   <div class="title">
@@ -22,7 +52,11 @@
 
   <div class="league-list">
     <% @leagues.each do |l| %>
-      <%= l.logo %>
+    <div class="col-xs-3">
+      <div class="league-item" style="background-image: url('<%= l.logo %>') ">
+        <%= link_to '', '/' %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

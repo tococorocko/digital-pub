@@ -1,0 +1,42 @@
+<div class="chat-name">
+  <% if @chat.team.present? %>
+    <h2><%= @chat.team.name %> table</h2>
+  <% else %>
+    <h2>Stammtisch</h2>
+  <% end %>
+</div>
+
+<div class="chat-content">
+  <% @chat.messages.order(created_at: :asc).each do |m| %>
+    <% if m.user_chat.user == current_user %>
+
+      <div class="mine message">
+        <p class="user-name"><strong>me</strong> - <%= m.created_at.strftime("%H:%M") %></p>
+        <div class="my-message-content">
+          <p><%= m.content %></p>
+        </div>
+      </div>
+
+    <% else %>
+
+      <div class="other message">
+        <p class="user-name"><strong><%= m.user_chat.user.username %></strong> - <%= m.created_at.strftime("%H:%M") %></p>
+        <div class="other-message-content">
+          <p><%= m.content %></p>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>
+
+<div class="add-message">
+  <%= simple_form_for([current_user.user_chat_for(@chat), Message.new]) do |f| %>
+    <%= f.input :content, label: false %>
+    <%= f.button :submit, class:'btn-digital-pub-green' %>
+  <% end %>
+
+</div>
+<%= content_for(:after_js) do %>
+<%= javascript_pack_tag 'scroll' %>
+<% end %>
