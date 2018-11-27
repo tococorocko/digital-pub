@@ -49,7 +49,13 @@
   height: 15vh;
 }
 
-  .card-team p{
+  .card-team p {
   font-size: 20px;
   margin: 0px;
+  color: black;
+}
+
+a:hover {
+  opacity: 0.6;
+  text-decoration: none;
 }

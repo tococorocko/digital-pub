@@ -4,7 +4,7 @@
     <h2>Choose your table</h2>
   </div>
 
-  <div class="card-tables">
+  <%= link_to "/", class: "card-tables" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
 
@@ -15,9 +15,9 @@
     <div class="card-team">
       <p><%= Team.find(@game.team_a_id).name %></p>
     </div>
-  </div>
+  <% end  %>
 
-  <div class="card-tables">
+  <%= link_to "/", class: "card-tables" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
       <!-- Logo on Table -->
@@ -26,11 +26,10 @@
     <div class="card-team">
       <p><%= Team.find(@game.team_b_id).name %></p>
     </div>
-  </div>
+  <% end %>
 
 
-
-  <div class="card-tables">
+  <%= link_to "/", class: "card-tables" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
       <!-- Logo on Table -->
@@ -39,7 +38,7 @@
     <div class="card-team">
       <p>"Stammtisch"</p>
     </div>
-  </div>
+  <% end %>
 </div>
 
 
