@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.27) 0%, rgba(0,0,0,0.6) 50%), url('https://images.pexels.com/photos/8590/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940')">
+  <div class='text-center'>
+    <h1>Digital Pub</h1>
+    <p>Join the football family</p>
+  </div>
+</div>
+
+<div class="top-games">
+  <div class="title">
+    <h2>My top games</h2>
+  </div>
+
+  <div class="game-list">
+
+  </div>
+</div>
+
+<div class="leagues">
+  <div class="title">
+    <h2>Choose your league</h2>
+  </div>
+
+  <div class="league-list">
+    <% @leagues.each do |l| %>
+      <%= l.logo %>
+    <% end %>
+  </div>
+</div>
