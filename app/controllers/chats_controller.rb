@@ -1,4 +1,9 @@
 class ChatsController < ApplicationController
+  def index
+    @game = Game.find(params[:game_id])
+    @chats = Chat.all
+  end
+
   def show
     @chat = Chat.find(params[:id])
     @user_chats = @chat.user_chats
@@ -10,5 +15,5 @@ class ChatsController < ApplicationController
     end
     @messages.sort! { |a,b| a.created_at <=> b.created_at }
   end
-
+  
 end
