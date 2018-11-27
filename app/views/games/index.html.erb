@@ -1,0 +1,10 @@
+<h3>Live games</h3>
+
+
+<% @games.each do |g| %>
+  <p><%= g.team_a.name %> <%= image_tag g.team_a.logo, id: "logo" %> %> x <%= image_tag g.team_b.logo, id: "logo" %> <%= g.team_b.name %></p>
+  <p><%= g.kick_off_time.strftime("%m/%d/%Y") %></p>
+  <p><%= g.kick_off_time.strftime("%H:%M") %></p>
+  <% end %>
+
+<h3>Next games</h3>

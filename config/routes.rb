@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :user_chats, only: [] do
     resources :messages, only: :create
   end
+
 end
