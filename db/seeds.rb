@@ -8,9 +8,9 @@
 
 
 User.destroy_all
+Game.destroy_all
 Team.destroy_all
 League.destroy_all
-Game.destroy_all
 
 
 
@@ -40,6 +40,7 @@ user_4 = User.create!({
   password: "mario.hilsenrath@gmail.com"
 })
 
+puts 'Users created'
 # TEAMS #######################################
 
 team_1 = Team.new({
@@ -60,6 +61,7 @@ team_3 = Team.new({
 team_3.logo = "https://upload.wikimedia.org/wikipedia/pt/b/b6/Manchester_United_FC_logo.png.png"
 team_3.save
 
+puts 'Teams created'
 # LEAGUES #######################################
 
 league_1 = League.new({
@@ -74,6 +76,7 @@ league_2 = League.new({
 league_2.logo = "https://upload.wikimedia.org/wikipedia/pt/9/9b/116px-UEFA_Champions_League_logo_2_svg.png"
 league_2.save
 
+puts 'Leagues created'
 # GAMES #######################################
 
 game_1 = Game.create!({
@@ -97,6 +100,7 @@ game_3 = Game.create!({
   kick_off_time: "Sat, 08 Dec 2018 10:00:00"
 })
 
+puts 'Games created'
 # FAVOURITE TEAMS #######################################
 
 user_1_fav_team = FavoriteTeam.create!({
@@ -125,3 +129,6 @@ user_2_fav_league = FavoriteLeague.create!({
   league_id: league_2.id,
   user_id: user_2.id
 })
+puts 'Added favorite teams & leagues to users'
+
+puts 'All done! Enjoy Mario\'s amazing seed :)'
