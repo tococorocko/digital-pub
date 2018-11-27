@@ -1,1 +1,36 @@
-// Specific CSS for your home-page
+.banner {
+  height: 34vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  h1 {
+    color: white;
+    margin-top: 0;
+  }
+  p {
+    color: white;
+    opacity: 0.8;
+    font-size: 21px;
+  }
+}
+
+.title {
+  background-color: $green;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: white;
+    margin: 0;
+  }
+}
+
+.game-list {
+  min-height: 10vh;
+}
