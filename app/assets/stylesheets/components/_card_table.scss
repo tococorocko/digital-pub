@@ -1,0 +1,55 @@
+.background-pub {
+  background-size: cover;
+  height: 100vh
+}
+
+.title-tables {
+  background-color: $light-green;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: white;
+    margin: 0;
+  }
+}
+
+.card-tables {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  border-radius: 4px;
+  background-color: white;
+  opacity: 0.7;
+  margin: 5vh 20px;
+  display: flex;
+  align-items: center;
+}
+
+.card-item {
+  background-size: cover;
+  position: relative;
+  height: 15vh;
+  margin: 5px 15px 5px 5px;
+  width: 110px;
+}
+
+.card-tables-logo {
+  height: 50px;
+  position: absolute;
+  top: 23px;
+  left: 24px;
+}
+
+
+.card-tables-table {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 15vh;
+}
+
+  .card-team p{
+  font-size: 20px;
+  margin: 0px;
+}
