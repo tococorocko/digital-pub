@@ -4,7 +4,7 @@
     <h2>Choose your table</h2>
   </div>
 
-  <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.ids), class: "card-tables" do%>
+  <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.find(1)), class: "card-tables" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
 
@@ -17,7 +17,7 @@
     </div>
   <% end  %>
 
-  <%= link_to "/", class: "card-tables" do%>
+  <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.ids), class: "card-tables" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
       <!-- Logo on Table -->
@@ -29,7 +29,7 @@
   <% end %>
 
 
-  <%= link_to "/", class: "card-tables" do%>
+  <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.ids), class: "card-tables" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
       <!-- Logo on Table -->

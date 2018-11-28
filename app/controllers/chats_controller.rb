@@ -15,5 +15,4 @@ class ChatsController < ApplicationController
     end
     @messages.sort! { |a,b| a.created_at <=> b.created_at }
   end
-  
 end
