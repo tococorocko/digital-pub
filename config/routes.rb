@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # get 'pages/preferences' => "pages#preferences"
+
+  resources :preferences, only: [:index]
+  resources :favorite_teams, only: [:new, :create, :destroy]
+  resources :favorite_leagues, only: [:new, :create, :destroy]
 end
