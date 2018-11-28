@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_28_164930) do
     t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "online"
+    t.boolean "online", default: false
     t.index ["game_id"], name: "index_chats_on_game_id"
     t.index ["team_id"], name: "index_chats_on_team_id"
   end
