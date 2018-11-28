@@ -107,27 +107,27 @@ game_1 = Game.create!({
   team_a_id: team_1.id,
   team_b_id: team_2.id,
   league_id: league_1.id,
-  kick_off_time: "Sat, 01 Dec 2018 16:00:00"
+  kick_off_time: "Wed, 28 Nov 2018 17:00:00"
 })
 
 game_2 = Game.create!({
   team_a_id: team_3.id,
   team_b_id: team_4.id,
-  league_id: league_2.id,
-  kick_off_time: "Wen, 05 Dec 2018 14:00:00"
+  league_id: league_1.id,
+  kick_off_time: "Wed, 28 Nov 2018 16:00:00"
 })
 
 game_3 = Game.create!({
   team_a_id: team_3.id,
   team_b_id: team_5.id,
-  league_id: league_2.id,
+  league_id: league_1.id,
   kick_off_time: "Sat, 08 Dec 2018 10:00:00"
 })
 
 game_4 = Game.create!({
   team_a_id: team_4.id,
   team_b_id: team_5.id,
-  league_id: league_2.id,
+  league_id: league_1.id,
   kick_off_time: "Sun, 09 Dec 2018 10:00:00"
 })
 
@@ -135,7 +135,7 @@ game_5 = Game.create!({
   team_a_id: team_2.id,
   team_b_id: team_1.id,
   league_id: league_1.id,
-  kick_off_time: "Sat, 08 Dec 2018 16:00:00"
+  kick_off_time: "Wed, 28 Nov 2018 21:00:00"
 })
 
 puts 'Games created'
