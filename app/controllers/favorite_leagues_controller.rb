@@ -12,8 +12,7 @@ class FavoriteLeaguesController < ApplicationController
       redirect_to preferences_path
     else
       flash[:alert] = "Duplicate"
-      render 'new'
-      flash.delete(:alert)
+      redirect_to preferences_path
     end
   end
 

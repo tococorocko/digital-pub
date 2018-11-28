@@ -1,5 +1,10 @@
 <%= simple_form_for(@favoriteteam) do |f| %>
-  <%= f.association :team %>
+  <%= f.association :team, input_html: {class: 'js-example-basic-single'} %>
   <%= f.button :submit %>
 <% end %>
 
+<script>
+  $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+  });
+</script>
