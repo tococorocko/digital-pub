@@ -1,0 +1,35 @@
+<div class="chat-name">
+  <% if @chat.team.present? %>
+    <h2><%= @chat.team.name %> table</h2>
+  <% else %>
+    <h2>Stammtisch</h2>
+  <% end %>
+</div>
+
+<div class="messages">
+  <% @chat.messages.order(created_at: :asc).each do |message| %>
+    <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+  <% end %>
+</div>
+
+<div id="create-message">
+  <%= simple_form_for [@chat.game, @chat, Message.new], remote: true do |f| %>
+    <%= f.input :content, label: false %>
+    <%= f.button :submit, class:'btn-digital-pub' %>
+  <% end %>
+
+</div>
+
+<%= content_for(:after_js) do %>
+  <script>
+    App['chat_<%= @chat.id %>'] = App.create.subscriptions.create({ channel: 'ChatsChannel', chat_id: <%= @chat.id %> }, {
+      received: (data) => {
+        if (data.current_user_id !== <%= current_user.id %>) {
+          const messagesContainer = document.querySelector('.messages');
+          messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+        }
+      }
+    })
+  </script>
+  <%= javascript_pack_tag 'scroll' %>
+<% end %>

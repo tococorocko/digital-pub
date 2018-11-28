@@ -1,0 +1,24 @@
+.btn-digital-pub-green {
+  background-color: $green;
+  border-radius: 3px;
+  color: white !important;
+  font-family: 'Arvo';
+  padding: 7px 12px;
+  &:hover {
+    text-decoration: none;
+    color: rgba(250,250,250,0.5);
+  }
+}
+
+.btn-digital-pub-white {
+  background-color: $light-gray;
+  border-radius: 3px;
+  border: 2px solid $green;
+  color: $green;
+  font-family: 'Roboto Slab';
+  padding: 7px 12px;
+  &:hover {
+    text-decoration: none;
+    color: rgba(13,115,10,0.5);
+  }
+}

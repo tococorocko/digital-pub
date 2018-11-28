@@ -1,0 +1,45 @@
+  <div class="background-pub" style="background-image: linear-gradient(-205deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.51) 50%), url('http://irishpubcompany.com/wp-content/uploads/2015/12/Capture1.jpg');">
+
+  <div class="title-tables">
+    <h2>Choose your table</h2>
+  </div>
+
+  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_a_id)), class: "card-tables" do%>
+    <div class="card-item">
+      <%= image_tag "table.svg", class:"card-tables-table" %>
+
+      <%= image_tag Team.find(@game.team_a_id).logo, class:"card-tables-logo" %>
+    </div>
+     <div class="card-tables-logo">
+    </div>
+    <div class="card-team">
+      <p><%= Team.find(@game.team_a_id).name %></p>
+    </div>
+  <% end  %>
+
+  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_b_id)), class: "card-tables" do%>
+    <div class="card-item">
+      <%= image_tag "table.svg", class:"card-tables-table" %>
+      <!-- Logo on Table -->
+      <%= image_tag Team.find(@game.team_b_id).logo, class:"card-tables-logo" %>
+    </div>
+    <div class="card-team">
+      <p><%= Team.find(@game.team_b_id).name %></p>
+    </div>
+  <% end %>
+
+
+  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(nil)), class: "card-tables" do%>
+    <div class="card-item">
+      <%= image_tag "table.svg", class:"card-tables-table" %>
+      <!-- Logo on Table -->
+      <%= image_tag "beer.svg", class:"card-tables-logo" %>
+    </div>
+    <div class="card-team">
+      <p>"Stammtisch"</p>
+    </div>
+  <% end %>
+</div>
+
+
+<!-- Logo on Table -->

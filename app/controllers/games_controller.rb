@@ -14,4 +14,5 @@ class GamesController < ApplicationController
     #   @league = League.first
     # end
   end
+
 end
