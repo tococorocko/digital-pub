@@ -1,2 +1,2 @@
-import "./scroll";
+// import "./scroll";
 import "bootstrap";
