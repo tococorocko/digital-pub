@@ -1,3 +1,3 @@
 // import "./scroll";
 import "bootstrap";
-import "select2"
+import "select2";

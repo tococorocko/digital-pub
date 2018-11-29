@@ -14,10 +14,20 @@
   border-bottom: 20px;
 }
 
-.leagues-select {
+.leagues-choice {
   background-color: $green;
   border: none;
   color: white;
   font-size: 21px;
+  display: flex;
+  justify-content: space-around;
+  height: 7vh;
+  align-items: center;
+  a {
+    color: white;
+  }
 }
 
+.match-list {
+  margin-bottom: 10px;
+}
