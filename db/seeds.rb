@@ -20,8 +20,8 @@ user_2 = User.create!({
 
 user_3 = User.create!({
   username: "tococorocko",
-  email: "lucca.kaiser@gmail.com",
-  password: "lucca.kaiser@gmail.com"
+  email: "luccakaiser@gmail.com",
+  password: "luccakaiser@gmail.com"
 })
 
 user_4 = User.create!({

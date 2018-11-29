@@ -1,13 +1,11 @@
 <div class="combobox">
   <div class="title combo">
-      <select class="leagues-select">
-        <% leagues_array = League.all.map { |l| l.name } %>
-        <%= options_for_select(leagues_array) %>
-      </select>
+    <select class="leagues-select">
+      <% leagues_array = League.all.map { |l| l.name } %>
+      <%= options_for_select(leagues_array) %>
+    </select>
   </div>
 </div>
-
-
 
 <div class="games">
   <div class="title today-list">
@@ -16,35 +14,30 @@
   <div class="game-list match-list">
     <div class='game-item'>
       <% @games.each do |g| %>
-
-      <% if @league.name == g.league.name && @date == g.kick_off_time.to_date %>
-
-
-      <div class="col-xs-4 team-name">
-        <% if g.team_a.name.length <= 18 %>
-          <p><%= g.team_a.name %></p>
-        <% else %>
-          <p><%= g.team_a.name[0..15] %>...</p>
-        <% end %>
-      </div>
-
-      <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-      <div class="col-xs-2 datetime">
-        <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
-      </div>
-      <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-      <div class="col-xs-4 team-name">
-        <% if g.team_b.name.length <= 18 %>
-        <p><%= g.team_b.name %></p>
-        <% else %>
-        <p><%= g.team_b.name[0..15] %>...</p>
-        <% end %>
-      </div>
-      <% end %>
+      
+        <% if @league.name == g.league.name && @date == g.kick_off_time.to_date && g.chats.first.online == true %>
+          <div class="col-xs-4 team-name">
+            <% if g.team_a.name.length <= 18 %>
+              <p><%= g.team_a.name %></p>
+            <% else %>
+              <p><%= g.team_a.name[0..15] %>...</p>
+            <% end %>
+          </div>
+          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+          <div class="col-xs-2 datetime">
+            <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
+          </div>
+          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+          <div class="col-xs-4 team-name">
+            <% if g.team_b.name.length <= 18 %>
+            <p><%= g.team_b.name %></p>
+            <% else %>
+            <p><%= g.team_b.name[0..15] %>...</p>
+            <% end %>
+          </div>
 
       <% end %>
-
-
+      <% end %>
     </div>
   </div>
 
@@ -54,31 +47,28 @@
   <div class="game-list">
     <div class='game-item'>
       <% @games.each do |g| %>
-
-      <% if @league.name == g.league.name && @date == g.kick_off_time.to_date %>
-
-      <div class="col-xs-4 team-name">
-        <% if g.team_a.name.length <= 18 %>
-        <p><%= g.team_a.name %></p>
-        <% else %>
-        <p><%= g.team_a.name[0..15] %>...</p>
+        <% old_game = g.kick_off_time.time - 60.minutes %>
+        <% if @league.name == g.league.name && @date == g.kick_off_time.to_date && g.chats.first.online == false && old_game > @time%>
+          <div class="col-xs-4 team-name">
+            <% if g.team_a.name.length <= 18 %>
+              <p><%= g.team_a.name %></p>
+            <% else %>
+              <p><%= g.team_a.name[0..15] %>...</p>
+            <% end %>
+          </div>
+          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+          <div class="col-xs-2 datetime">
+            <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
+          </div>
+          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+          <div class="col-xs-4 team-name">
+            <% if g.team_b.name.length <= 18 %>
+            <p><%= g.team_b.name %></p>
+            <% else %>
+            <p><%= g.team_b.name[0..15] %>...</p>
+            <% end %>
+          </div>
         <% end %>
-      </div>
-      <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-      <div class="col-xs-2 datetime">
-        <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
-      </div>
-      <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-      <div class="col-xs-4 team-name">
-        <% if g.team_b.name.length <= 18 %>
-        <p><%= g.team_b.name %></p>
-        <% else %>
-        <p><%= g.team_b.name[0..15] %>...</p>
-        <% end %>
-      </div>
-
-      <% end %>
-
       <% end %>
     </div>
   </div>

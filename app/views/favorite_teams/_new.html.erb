@@ -1,10 +1,19 @@
-<%= simple_form_for(@favoriteteam, :html => {:class => 'form-inline' }) do |f| %>
-  <%= f.association :team, input_html: {class: 'js-example-basic-single'} %>
-  <%= f.button :submit, "Add" %>
-<% end %>
-
-<script>
-  $(document).ready(function() {
-      $('.js-example-basic-single').select2();
-  });
-</script>
+<div class="form-dropdown">
+    <div>
+      <%= simple_form_for(@favoriteteam, :html => {:class => 'form-inline' }) do |f| %>
+    </div>
+    <div>
+      <%= f.association :team, input_html: {class: 'js-example-basic-single'} %>
+    </div>
+    <div>
+      <%= button_tag :submit, class: "btn-plus" do %>
+          <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+    <% end %>
+      <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+      </script>
+  </div>

@@ -32,13 +32,14 @@
 }
 
 .game-list, .league-list {
-  min-height: 10vh;
+  min-height: 8vh;
   margin-top: 10px;
 }
 
 .league-item {
   height: 14vh;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   position: relative;
   a {
@@ -58,7 +59,8 @@
     margin: 0;
   }
   .logo {
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     height: 5vh;
   }

@@ -1,19 +1,43 @@
 .logo-small {
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 5vh;
+  height: 5vh;
 }
 
 ul {
   list-style: none;
+  margin-top: 5px;
   padding-left: 0;
 }
 
-.fav-teams, .fav-leagues {
-  padding: 10px 20px;
+.form-dropdown {
+  display: flex;
+  align-items: center;
 }
 
-#pref-heading {
+.form-group {
+  margin: 0px;
+}
+
+.fav-teams {
+  margin-top: 25px;
+}
+
+.fav-leagues_result {
+  margin: 20px 0;
+}
+
+  .favorite_league_league {
+    width: 240px !important;
+    padding: 0 5px 0 15px;
+  }
+
+  .favorite_team_team {
+    width: 240px !important;
+    padding: 0 5px 0 15px;
+  }
+
+.pref-heading {
   margin: 10px
 }
 
@@ -21,12 +45,35 @@ label {
   display: none;
 }
 
-.form-inline div {
-  display: inline-block;
-}
 
-.form-inline {
-  background-color: red;
-  margin: 0;
-  padding: 0;
+.form-preferences {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+  }
+  .btn-plus{
+    font-size: 17px;
+    color: green;
+    font-weight: bolder;
+    padding: 2px 7px;
+    // margin: 0;
+    // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+    border-radius: 4px;
+    background-color: white;
+  }
+  a {
+    color: $light-green;
+    font-size: 12px;
+  }
+
 }
