@@ -1,0 +1,10 @@
+<%= simple_form_for(@favoriteleague, :html => {:class => 'form-inline' }) do |f| %>
+  <%= f.association :league, input_html: {class: 'js-example-basic-single'} %>
+  <%= f.button :submit, "Add" %>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+  });
+</script>
