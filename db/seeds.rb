@@ -85,9 +85,11 @@ league_4.save
 puts 'Leagues created'
 # GAMES #######################################
 
+
+
 game_1 = Game.create!({
   team_a_id: Team.find_by(name: 'Manchester United FC').id,
-  team_b_id: Team.find_by(name: 'Vfl Wolfsburg').id,
+  team_b_id: Team.find_by(name: 'VfL Wolfsburg').id,
   league_id: league_1.id,
   kick_off_time: "Wed, 28 Nov 2018 17:00:00"
 })
@@ -120,35 +122,35 @@ game_5 = Game.create!({
   kick_off_time: "Wed, 28 Nov 2018 21:00:00"
 })
 
-# puts 'Games created'
-# # FAVOURITE TEAMS #######################################
+puts 'Games created'
+# FAVOURITE TEAMS #######################################
 
-# user_1_fav_team = FavoriteTeam.create!({
-#   team_id: team_1.id,
-#   user_id: user_1.id
-# })
+user_1_fav_team = FavoriteTeam.create!({
+  team_id: Team.find_by(name: 'Burnley FC').id,
+  user_id: user_1.id
+})
 
-# user_2_fav_team = FavoriteTeam.create!({
-#   team_id: team_2.id,
-#   user_id: user_2.id
-# })
+user_2_fav_team = FavoriteTeam.create!({
+  team_id: Team.find_by(name: 'ACF Fiorentina').id,
+  user_id: user_2.id
+})
 
-# user_3_fav_team = FavoriteTeam.create!({
-#   team_id: team_3.id,
-#   user_id: user_3.id
-# })
+user_3_fav_team = FavoriteTeam.create!({
+  team_id: Team.find_by(name: 'AC Milan').id,
+  user_id: user_3.id
+})
 
-# # FAVOURITE LEAGUES #######################################
+# FAVOURITE LEAGUES #######################################
 
-# user_1_fav_league = FavoriteLeague.create!({
-#   league_id: league_1.id,
-#   user_id: user_1.id
-# })
+user_1_fav_league = FavoriteLeague.create!({
+  league_id: league_1.id,
+  user_id: user_1.id
+})
 
-# user_2_fav_league = FavoriteLeague.create!({
-#   league_id: league_2.id,
-#   user_id: user_2.id
-# })
-# puts 'Added favorite teams & leagues to users'
+user_2_fav_league = FavoriteLeague.create!({
+  league_id: league_2.id,
+  user_id: user_2.id
+})
+puts 'Added favorite teams & leagues to users'
 
-# puts 'All done! Enjoy Mario\'s amazing seed :)'
+puts 'All done! Enjoy Mario\'s amazing seed :)'
