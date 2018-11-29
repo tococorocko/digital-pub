@@ -2,7 +2,7 @@
   <h1 class="text-center">Edit your preferences</h1>
 
   <div class="fav-leagues">
-    <h2>Your favorite leagues are:</h2>
+    <h2 class="text-center" id="pref-heading">Your favorite leagues are:</h2>
     <%= render "favorite_leagues/new" %>
     <% if current_user.favorite_leagues.empty? %>
       <p>Currently you don't have any favorite leagues. Add them here</p>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="fav-teams">
-    <h2>Your favorite teams are:</h2>
+    <h2 class="text-center" id="pref-heading">Your favorite teams are:</h2>
     <%= render "favorite_teams/new" %>
     <% if current_user.favorite_teams.empty? %>
       <p>Currently you don't have any favorite teams. Add them here</p>

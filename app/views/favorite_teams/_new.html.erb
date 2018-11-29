@@ -1,6 +1,6 @@
-<%= simple_form_for(@favoriteteam) do |f| %>
+<%= simple_form_for(@favoriteteam, :html => {:class => 'form-inline' }) do |f| %>
   <%= f.association :team, input_html: {class: 'js-example-basic-single'} %>
-  <%= f.button :submit %>
+  <%= f.button :submit, "Add" %>
 <% end %>
 
 <script>
