@@ -52,7 +52,7 @@
     <% @leagues.each do |l| %>
     <div class="col-xs-3">
       <div class="league-item" style="background-image: url('<%= l.logo %>') ">
-        <%= link_to '', '/' %>
+        <%= link_to '', games_path(league: l) %>
       </div>
     </div>
     <% end %>
