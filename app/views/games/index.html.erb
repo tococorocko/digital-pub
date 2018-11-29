@@ -1,9 +1,9 @@
 <div class="combobox">
   <div class="title combo">
-      <select class="leagues-select">
-        <% leagues_array = League.all.map { |l| l.name } %>
-        <%= options_for_select(leagues_array) %>
-      </select>
+    <select class="leagues-select">
+      <% leagues_array = League.all.map { |l| l.name } %>
+      <%= options_for_select(leagues_array) %>
+    </select>
   </div>
 </div>
 
@@ -22,9 +22,9 @@
 
       <div class="col-xs-4 team-name">
         <% if g.team_a.name.length <= 18 %>
-          <p><%= g.team_a.name %></p>
+        <p><%= g.team_a.name %></p>
         <% else %>
-          <p><%= g.team_a.name[0..15] %>...</p>
+        <p><%= g.team_a.name[0..15] %>...</p>
         <% end %>
       </div>
 
