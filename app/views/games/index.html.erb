@@ -1,10 +1,8 @@
-<div class="combobox">
-  <div class="title combo">
-    <select class="leagues-select">
-      <% leagues_array = League.all.map { |l| l.name } %>
-      <%= options_for_select(leagues_array) %>
-    </select>
-  </div>
+<div class="leagues-choice">
+  <% leagues_array = League.all %>
+  <% leagues_array.each do |league| %>
+    <%= link_to league.name, games_path(league: league) %>
+  <% end %>
 </div>
 
 <div class="games">
@@ -12,8 +10,9 @@
     <h2>Live games</h2>
   </div>
   <div class="game-list match-list">
-    <div class='game-item'>
-      <% @games.each do |g| %>
+    <% @games.each do |g| %>
+      <div class='game-item'>
+        <%= link_to game_chats_path(g) do %>
         <% if @league.name == g.league.name && @date == g.kick_off_time.to_date && g.chats.first.online == true %>
           <div class="col-xs-4 team-name">
             <% if g.team_a.name.length <= 18 %>
@@ -35,16 +34,17 @@
             <% end %>
           </div>
         <% end %>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="title today-list">
     <h2>Next games</h2>
   </div>
   <div class="game-list">
-    <div class='game-item'>
       <% @games.each do |g| %>
+    <div class='game-item'>
         <% old_game = g.kick_off_time.time - 60.minutes %>
         <% if @league.name == g.league.name && @date == g.kick_off_time.to_date && g.chats.first.online == false && old_game > @time%>
           <div class="col-xs-4 team-name">
@@ -67,7 +67,7 @@
             <% end %>
           </div>
         <% end %>
-      <% end %>
     </div>
+      <% end %>
   </div>
 </div>
