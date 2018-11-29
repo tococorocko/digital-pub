@@ -1,10 +1,11 @@
-function scrollLastMessageIntoView() {
-  const messages = document.querySelectorAll('.message');
-  const lastMessage = messages[messages.length - 1];
+// console.log('hello from scroll.js');
+// function scrollLastMessageIntoView() {
+//   const messages = document.querySelectorAll('.message');
+//   const lastMessage = messages[messages.length - 1];
 
-  if (lastMessage !== undefined) {
-    lastMessage.scrollIntoView();
-  }
-}
+//   if (lastMessage !== undefined) {
+//     lastMessage.scrollIntoView();
+//   }
+// }
 
-scrollLastMessageIntoView();
+// scrollLastMessageIntoView();
