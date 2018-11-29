@@ -1,0 +1,32 @@
+<div class="pref-wrapper">
+  <h1 class="text-center">Edit your preferences</h1>
+
+  <div class="fav-leagues">
+    <h2 class="text-center" id="pref-heading">Your favorite leagues are:</h2>
+    <%= render "favorite_leagues/new" %>
+    <% if current_user.favorite_leagues.empty? %>
+      <p>Currently you don't have any favorite leagues. Add them here</p>
+    <% else %>
+      <% @favoriteleagues.each do |f_league| %>
+        <ul>
+          <li><%= image_tag f_league.league.logo, class: "logo-small" %> <%= f_league.league.name %> | <%= link_to "Delete", favorite_league_path(f_league.id), method: :delete %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="fav-teams">
+    <h2 class="text-center" id="pref-heading">Your favorite teams are:</h2>
+    <%= render "favorite_teams/new" %>
+    <% if current_user.favorite_teams.empty? %>
+      <p>Currently you don't have any favorite teams. Add them here</p>
+    <% else %>
+      <% @favoriteteams.each do |f_team| %>
+        <ul>
+          <li><%= image_tag f_team.team.logo, class: "logo-small" %> <%= f_team.team.name %> | <%= link_to "Delete", favorite_team_path(f_team.id), method: :delete %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
