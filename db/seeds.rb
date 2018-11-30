@@ -100,7 +100,7 @@ def api_matches(league, identifier, num)
     Game.create(
       team_a_id: Team.find_by(name: game["homeTeam"]["name"]).id,
       team_b_id: Team.find_by(name: game["awayTeam"]["name"]).id,
-      kick_off_time: time_conversion(game["utcDate"]),
+      kick_off_time: game["utcDate"],
       league_id: identifier
       )
   end
