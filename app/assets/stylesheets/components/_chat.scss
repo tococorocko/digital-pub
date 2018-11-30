@@ -8,12 +8,17 @@
     color: white;
     margin: 0;
   }
+  img {
+    background-size: contain;
+    height: 7vh;
+    margin-right: 10px;
+  }
 }
 .messages {
-  height: 58vh;
+  height: 65vh;
   font-size: 14px;
   color: white;
-  background-color: #ffffff;
+  background-size: cover;
   padding: 20px;
   border: 1px solid #ececec;
   border-top: none;

@@ -31,6 +31,35 @@
   }
 }
 
+.welcome-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.arrow-right {
+  font-size: 28px;
+  color: $green;
+}
+
+.welcome-text {
+  margin: 20px 0;
+  text-align: center;
+  a {
+    color: black;
+  }
+}
+
 .game-list, .league-list {
   min-height: 8vh;
   margin-top: 10px;
