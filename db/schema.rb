@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_131237) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.string "logo", default: "https://www.shareicon.net/data/2015/12/22/691473_security_512x512.png"
+    t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
