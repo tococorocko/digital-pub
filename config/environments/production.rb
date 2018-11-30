@@ -48,7 +48,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   config.action_cable.url = 'wss://www.digital-pub.live/cable'
-  config.action_cable.allowed_request_origins = [ 'http://www.digital-pub.live', 'https://digital-pub.live' ]
+  config.action_cable.allowed_request_origins = [ 'http://www.digital-pub.live', 'https://www.digital-pub.live' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
