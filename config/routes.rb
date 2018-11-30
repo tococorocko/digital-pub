@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-
+  get 'pages/about'
 
   resources :preferences, only: [:index]
   resources :favorite_teams, only: [:new, :create, :destroy]
