@@ -3,7 +3,7 @@
       <%= simple_form_for(@favoriteleague, :html => {:class => 'form-inline' }) do |f| %>
     </div>
     <div>
-      <%= f.association :league, input_html: {class: '  js-example-basic-single'} %>
+      <%= f.association :league, input_html: {class: '  js-example-basic-single'}, label: false %>
     </div>
     <div>
       <%= button_tag :submit, class: "btn-plus" do %>
