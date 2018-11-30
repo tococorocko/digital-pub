@@ -12,4 +12,8 @@ class PagesController < ApplicationController
     end
     @games.sort! { |a,b| a.kick_off_time <=> b.kick_off_time }
   end
+
+  def about
+
+  end
 end
