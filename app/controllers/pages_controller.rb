@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about]
 
   def home
     @leagues = League.all
@@ -11,5 +11,9 @@ class PagesController < ApplicationController
       end
     end
     @games.sort! { |a,b| a.kick_off_time <=> b.kick_off_time }
+  end
+
+  def about
+
   end
 end

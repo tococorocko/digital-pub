@@ -51,11 +51,16 @@
 .navbar-wagon-link {
   color: white;
   font-size: 14px;
+  &:focus {
+  color: white;
+  opacity: 0.6;
+  }
 }
 
 .navbar-wagon-link:hover {
   opacity: 0.6;
   text-decoration: none;
+  color: white;
 }
 
 /* Dropdown menu */

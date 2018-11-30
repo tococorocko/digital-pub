@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
-
+  get 'pages/about'
 
   resources :preferences, only: [:index]
   resources :favorite_teams, only: [:new, :create, :destroy]
@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       resources :messages, only: :create
     end
   end
+
+  mount ActionCable.server => "/cable"
+
 end

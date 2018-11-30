@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.27) 0%, rgba(0,0,0,0.6) 50%), url('https://images.pexels.com/photos/8590/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940')">
   <div class='text-center'>
     <h1>Digital Pub</h1>
-    <p>Join the football family</p>
+    <p>Chat about your favorite games</p>
   </div>
 </div>
 
@@ -41,6 +41,40 @@
     <% end %>
     </div>
   </div>
+
+<% else %>
+
+  <div class="welcome">
+    <div class="title">
+      <h2>Welcome to the Digital Pub</h2>
+    </div>
+
+    <div class="welcome-icons">
+      <div class="icon-group">
+        <i class="fas fa-sign-in-alt"></i>
+        <p>Log in</p>
+      </div>
+
+      <i class="fas fa-caret-right arrow-right"></i>
+
+      <div class="icon-group">
+        <i class="fas fa-futbol"></i>
+        <p>Choose your game</p>
+      </div>
+
+      <i class="fas fa-caret-right arrow-right"></i>
+
+      <div class="icon-group">
+        <i class="far fa-comments"></i>
+        <p>Chat</p>
+      </div>
+    </div>
+
+    <div class="welcome-text">
+      <%= link_to 'More', pages_about_path, class:'btn-digital-pub-white' %>
+    </div>
+
+  </div>
 <% end %>
 
 <div class="leagues">
@@ -52,7 +86,7 @@
     <% @leagues.each do |l| %>
     <div class="col-xs-3">
       <div class="league-item" style="background-image: url('<%= l.logo %>') ">
-        <%= link_to '', '/' %>
+        <%= link_to '', games_path(league: l) %>
       </div>
     </div>
     <% end %>
