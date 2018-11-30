@@ -91,35 +91,35 @@ game_1 = Game.create!({
   team_a_id: Team.find_by(name: 'Manchester United FC').id,
   team_b_id: Team.find_by(name: 'VfL Wolfsburg').id,
   league_id: league_2.id,
-  kick_off_time: "Wed, 28 Nov 2018 17:00:00"
+  kick_off_time: "Fri, 30 Nov 2018 17:00:00"
 })
 
 game_2 = Game.create!({
   team_a_id: Team.find_by(name: 'FC Barcelona').id,
   team_b_id: Team.find_by(name: 'Real Valladolid CF').id,
   league_id: league_1.id,
-  kick_off_time: "Wed, 28 Nov 2018 16:00:00"
+  kick_off_time: "sat, 01 Dec 2018 16:00:00"
 })
 
 game_3 = Game.create!({
   team_a_id: Team.find_by(name: 'SS Lazio').id,
   team_b_id: Team.find_by(name: 'SSC Napoli').id,
   league_id: league_4.id,
-  kick_off_time: "Sat, 08 Dec 2018 10:00:00"
+  kick_off_time: "Sun, 02 Dec 2018 10:00:00"
 })
 
 game_4 = Game.create!({
   team_a_id: Team.find_by(name: 'AC Milan').id,
   team_b_id: Team.find_by(name: 'ACF Fiorentina').id,
   league_id: league_4.id,
-  kick_off_time: "Sun, 09 Dec 2018 10:00:00"
+  kick_off_time: "Mon, 03 Dec 2018 10:00:00"
 })
 
 game_5 = Game.create!({
   team_a_id: Team.find_by(name: 'Burnley FC').id,
   team_b_id: Team.find_by(name: 'Leicester City FC').id,
   league_id: league_2.id,
-  kick_off_time: "Wed, 28 Nov 2018 21:00:00"
+  kick_off_time: "Tue, 04 Dec 2018 21:00:00"
 })
 
 puts 'Games created'

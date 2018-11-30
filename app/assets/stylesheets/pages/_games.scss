@@ -25,9 +25,18 @@
   align-items: center;
   a {
     color: white;
+    opacity: 0.5;
   }
 }
 
 .match-list {
   margin-bottom: 10px;
 }
+
+.underline {
+  text-decoration: underline;
+  a {
+  opacity: 1;
+  }
+}
+
