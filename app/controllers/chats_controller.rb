@@ -1,4 +1,6 @@
 class ChatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @game = Game.find(params[:game_id])
     @chats = Chat.all

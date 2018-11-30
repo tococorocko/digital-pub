@@ -1,6 +1,8 @@
 require 'date'
 
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @date = Date.today
     @time = Time.now.utc
