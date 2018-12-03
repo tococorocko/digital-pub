@@ -1,0 +1,251 @@
+
+.beer {
+  background-color: black;
+  height: 88vh;
+}
+
+#beer-container {
+  background-color: black;
+  height: 50vh;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 248px;
+}
+
+#beer-container div { position: absolute; }
+
+.tip {
+  text-align: center;
+  color: white;
+  opacity: 0.6;
+  margin-top: 45px;
+  display: none;
+}
+
+.pour {
+  position: absolute;
+  left: 45%;
+  width: 20px;
+  height: 0px;
+  background-color: #edaf32;
+  border-radius: 10px
+}
+
+#beaker {
+  border: 10px solid #FFF;
+  border-top: 0;
+  border-radius: 0 0 30px 30px;
+  height: 40vh;
+  left: 14px;
+  bottom: 0;
+  width: 220px;
+}
+
+#beaker:before,
+#beaker:after {
+  border: 10px solid #FFF;
+  border-bottom: 0;
+  border-radius: 30px 30px 0 0;
+  content: '';
+  height: 40px;
+  position: absolute;
+  top: -40px;
+  width: 50px;
+}
+
+#beaker:before { left: -50px; }
+#beaker:after { right: -50px; }
+
+#liquid {
+  background-color: #edaf32;
+  border: 10px solid #edaf32;
+  border-radius: 0 0 20px 20px;
+  bottom: 0;
+  height: 0;
+  overflow: hidden;
+  width: 200px;
+}
+
+#liquid:after {
+  background-color: rgba(255, 255, 255, 0.25);
+  bottom: -10px;
+  content: '';
+  height: 42vh;
+  left: -40px;
+  position: absolute;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(15deg);
+  width: 110px;
+}
+
+#liquid .bubble {
+  -webkit-animation-name: bubble;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  background-color: rgba(255, 255, 255, 0.2);
+  bottom: 0;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+@-webkit-keyframes bubble {
+  0% { bottom: 0; }
+
+   50% {
+     background-color: rgba(255, 255, 255, 0.2);
+      bottom: 100px;
+   }
+
+   100% {
+     background-color: rgba(255, 255, 255, 0);
+      bottom: 250px;
+   }
+}
+
+.bubble1 {
+  left: 10px;
+  -webkit-animation-delay: 1000ms;
+  -webkit-animation-duration: 1000ms;
+}
+
+.bubble2 {
+  left: 50px;
+  -webkit-animation-delay: 700ms;
+  -webkit-animation-duration: 1100ms;
+}
+
+.bubble3 {
+  left: 100px;
+  -webkit-animation-delay: 1200ms;
+  -webkit-animation-duration: 1300ms;
+}
+
+.bubble4 {
+  left: 130px;
+  -webkit-animation-delay: 1100ms;
+  -webkit-animation-duration: 700ms;
+}
+
+.bubble5 {
+  left: 170px;
+  -webkit-animation-delay: 1300ms;
+  -webkit-animation-duration: 800ms;
+}
+
+/* Foam */
+
+.beer-foam {
+  position: absolute;
+  bottom: 10px;
+}
+
+.foam-1, .foam-2, .foam-3, .foam-4,
+.foam-5, .foam-6, .foam-7 {
+  float: left;
+  position: absolute;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #fefefe;
+}
+.foam-1 {
+  top: -30px;
+  left: -10px;
+}
+.foam-2 {
+  top: -35px;
+  left: 20px;
+}
+.foam-3 {
+  top: -25px;
+  left: 50px;
+}
+.foam-4 {
+  top: -35px;
+  left: 80px;
+}
+.foam-5 {
+  top: -30px;
+  left: 110px;
+}
+.foam-6 {
+  top: -20px;
+  left: 140px;
+}
+.foam-7 {
+  top: -30px;
+  left: 160px;
+}
+
+
+ // BEER-SIGN
+
+
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+@font-face {
+  font-family: moon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/moon.ttf);
+}
+
+@font-face {
+  font-family: clipneon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/clip.ttf);
+}
+
+@font-face {
+  font-family: lasenter;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/lasenter.ttf);
+}
+
+  #sign-container {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  // .sign {
+  //   margin-left: -4vw;
+  //   margin-right: -4vw;
+  // }
+
+
+  .jackpots {
+    font-family: moon;
+    font-size: 14vh;
+  }
+
+
+  .jackpots {
+    animation: jackpots 1s 0s ease infinite;
+    -moz-animation: jackpots 1s 0s ease infinite;
+    /* Firefox */
+    -webkit-animation: jackpots 1s 0s ease infinite;
+    /* Safari and Chrome */
+    -o-animation: jackpots 1s 0s ease infinite;
+    /* Opera */
+  }
+
+  @keyframes jackpots {
+    0%,
+    100% {
+    text-shadow:
+    -.1vw 0vw .1vw #FED128, -.15vw 0vw .2vw #FED128, -.2vw 0vw .2vw #FED128,
+    -.1vw 0vw 3vw #F0130B, -.2vw 0vw 3vw #F0130B, -.4vw 0vw 3vw #F0130B,
+    -.1vw 0vw 5vw #F0130B, -.2vw 0vw 5vw #F0130B, -.4vw 0vw .8vw #F0130B, .2vw 0vw 10vw #F0130B;
+      color: #FED128;
+    }
+    50% {
+    text-shadow:
+    -.1vw 0vw .1vw #705C12, -.15vw 0vw .2vw #705C12, -.2vw 0vw .2vw #705C12,
+    -.1vw 0vw .1vw #5C0704, -.2vw 0vw .1vw #5C0704, -.4vw 0vw .1vw #5C0704,
+    -.1vw 0vw .2vw #5C0704, -.2vw 0vw .2vw #5C0704, -.4vw 0vw .2vw #5C0704, .2vw 0vw .5vw #5C0704;
+      color: #705C12;
+    }
+  }
+
+
+

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   get 'pages/about'
+  get 'pages/beer'
 
   resources :preferences, only: [:index]
   resources :favorite_teams, only: [:new, :create, :destroy]
