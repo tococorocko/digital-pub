@@ -51,8 +51,9 @@
   padding: 11px 10px 8px 10px;
   width: -moz-fit-content;
   width: -webkit-fit-content;
-  word-break: break-all;
   font-size: 18px;
+  word-wrap: break-word;
+  max-width: 80vw;
 }
 
 #create-message {
