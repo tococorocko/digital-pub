@@ -91,41 +91,7 @@ league_4.logo = "https://res.cloudinary.com/digital-pub/image/upload/c_fit,w_750
 league_4.save
 
 puts 'Leagues created'
-# GAMES #######################################
 
-def api_matches(league, identifier, num)
-  list = RestClient.get "https://api.football-data.org/v2/competitions/#{league}/matches?status=SCHEDULED", {'X-Auth-Token' => ENV['FOOTBALL_DATA_TOKEN'] }
-  games = JSON.parse(list)
-  games['matches'].first(num).each do |game|
-    Game.create(
-      team_a_id: Team.find_by(name: game["homeTeam"]["name"]).id,
-      team_b_id: Team.find_by(name: game["awayTeam"]["name"]).id,
-      kick_off_time: game["utcDate"],
-      league_id: identifier
-      )
-  end
-  sleep(2)
-end
-
-def time_conversion(string)
-  date = DateTime.parse(string)
-  date.strftime('%a, %d %b %y %H:%M:%S')
-end
-
-# Matches for Serie A
-api_matches("SA", 4, 10)
-
-# Matches for Bundesliga
-api_matches("BL1", 3, 10)
-
-# Matches for La Liga
-api_matches("PD", 1, 10)
-
-# Matches for Premier League
-api_matches("PL", 2, 10)
-
-
-puts 'Games created'
 # FAVOURITE TEAMS #######################################
 
 user_1_fav_team = FavoriteTeam.create!({
