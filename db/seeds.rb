@@ -1,4 +1,3 @@
-require 'rest-client'
 User.destroy_all
 Game.destroy_all
 Team.destroy_all
