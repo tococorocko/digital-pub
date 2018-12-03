@@ -13,11 +13,15 @@ class PagesController < ApplicationController
     @games.sort! { |a,b| a.kick_off_time <=> b.kick_off_time }
   end
 
-  def about
+  def rank
+    @users = User.all
+    @rank = []
 
-  end
-
-  def beer
-
+    @users.each do |u|
+      if u.score > 0
+        @rank << u
+      end
+    end
+    @rank.sort! { |a,b| b.score <=> a.score }
   end
 end
