@@ -1,48 +1,82 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.27) 0%, rgba(0,0,0,0.6) 50%), url('https://images.pexels.com/photos/8590/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940')">
-  <div class='text-center'>
-    <h1>Digital Pub</h1>
-    <p>Chat about your favorite games</p>
-  </div>
-</div>
+<% if current_user.present? %>
 
-<% if current_user.present? && current_user.favorite_teams.any? %>
-
-  <div class="top-games">
-    <div class="title">
-      <h2>My top games</h2>
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.27) 0%, rgba(0,0,0,0.6) 50%), url('https://images.pexels.com/photos/8590/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940')">
+    <div class='text-center'>
+      <h1>Digital Pub</h1>
     </div>
+  </div>
 
-    <div class="game-list">
-    <% @games[0..2].each do |g| %>
-      <div class='game-item'>
+  <% if current_user.favorite_teams.any? %>
+
+    <div class="top-games">
+      <div class="title">
+        <h2>My top games</h2>
+      </div>
+
+      <div class="game-list">
+      <% @games[0..2].each do |g| %>
         <%= link_to game_chats_path(g) do %>
-          <div class="col-xs-4 team-name">
-            <% if g.team_a.name.length <= 16 %>
-              <p><%= g.team_a.name %></p>
-            <% else %>
-              <p><%= g.team_a.name[0..13] %>...</p>
-            <% end %>
-          </div>
-          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-          <div class="col-xs-2 datetime">
-            <p style="font-size: 10px"><%= g.kick_off_time.strftime("%d-%b") %></p>
-            <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
-          </div>
-          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-          <div class="col-xs-4 team-name">
-            <% if g.team_b.name.length <= 18 %>
-              <p><%= g.team_b.name %></p>
-            <% else %>
-              <p><%= g.team_b.name[0..15] %>...</p>
-            <% end %>
+          <div class='game-item'>
+            <div class="col-xs-5 team-name">
+              <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+              <% if g.team_a.name.length <= 16 %>
+                <p><%= g.team_a.name %></p>
+              <% else %>
+                <p><%= g.team_a.name[0..13] %>...</p>
+              <% end %>
+            </div>
+
+            <div class="col-xs-2 datetime">
+              <% if g.kick_off_time.to_date == Date.today %>
+                <p><strong>Today</strong></p>
+              <% elsif g.kick_off_time.to_date == Date.tomorrow %>
+                <p><strong>Tomorrow</strong></p>
+              <% else %>
+                <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
+              <% end %>
+              <p><%= g.kick_off_time.strftime("%H:%M") %></p>
+            </div>
+
+            <div class="col-xs-5 team-name">
+              <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+              <% if g.team_b.name.length <= 18 %>
+                <p><%= g.team_b.name %></p>
+              <% else %>
+                <p><%= g.team_b.name[0..15] %>...</p>
+              <% end %>
+            </div>
           </div>
         <% end %>
+      <% end %>
       </div>
-    <% end %>
+    </div>
+
+  <% end %>
+
+  <div class="leagues">
+    <div class="title">
+      <h2>Choose your league</h2>
+    </div>
+
+    <div class="league-list">
+      <% @leagues.each do |l| %>
+      <div class="col-xs-3">
+        <div class="league-item" style="background-image: url('<%= l.logo %>') ">
+          <%= link_to '', games_path(league: l) %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 
 <% else %>
+
+  <div class="banner welcome-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.27) 0%, rgba(0,0,0,0.6) 50%), url('https://images.pexels.com/photos/8590/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940')">
+    <div class='text-center'>
+      <h1>Digital Pub</h1>
+      <p>Chat about your favorite games</p>
+    </div>
+  </div>
 
   <div class="welcome">
     <div class="title">
@@ -55,14 +89,18 @@
         <p>Log in</p>
       </div>
 
-      <i class="fas fa-caret-right arrow-right"></i>
+      <div class="icon-group">
+        <i class="fas fa-caret-down arrow-down"></i>
+      </div>
 
       <div class="icon-group">
         <i class="fas fa-futbol"></i>
         <p>Choose your game</p>
       </div>
 
-      <i class="fas fa-caret-right arrow-right"></i>
+      <div class="icon-group">
+        <i class="fas fa-caret-down arrow-down"></i>
+      </div>
 
       <div class="icon-group">
         <i class="far fa-comments"></i>
@@ -71,24 +109,10 @@
     </div>
 
     <div class="welcome-text">
-      <%= link_to 'More', pages_about_path, class:'btn-digital-pub-white' %>
+      <%= link_to 'Sign up', new_user_registration_path, class:'btn-digital-pub-white btn-welcome' %>
+      <%= link_to 'Log in', new_user_session_path, class:'btn-digital-pub-white btn-welcome' %>
     </div>
 
   </div>
+
 <% end %>
-
-<div class="leagues">
-  <div class="title">
-    <h2>Choose your league</h2>
-  </div>
-
-  <div class="league-list">
-    <% @leagues.each do |l| %>
-    <div class="col-xs-3">
-      <div class="league-item" style="background-image: url('<%= l.logo %>') ">
-        <%= link_to '', games_path(league: l) %>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>

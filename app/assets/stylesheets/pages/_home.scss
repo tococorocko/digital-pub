@@ -1,5 +1,5 @@
 .banner {
-  height: 34vh;
+  height: 20vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -9,9 +9,14 @@
   align-items: center;
   h1 {
     color: white;
-    margin-top: 0;
+    margin: 0;
   }
+}
+
+.welcome-banner {
+  height: 30vh;
   p {
+    margin-top: 10px;
     color: white;
     opacity: 0.8;
     font-size: 21px;
@@ -20,7 +25,7 @@
 
 .title {
   background-color: $green;
-  height: 10vh;
+  height: 8vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -31,30 +36,31 @@
   }
 }
 
-.welcome-icons {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 10px 0;
-}
-
 .icon-group {
+  margin: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
   p {
     margin-bottom: 0;
   }
 }
 
-.arrow-right {
+.arrow-down {
   font-size: 28px;
   color: $green;
 }
 
+.btn-welcome {
+  background-color: white;
+}
+
 .welcome-text {
-  margin: 20px 0;
+  margin: 20px;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
   a {
     color: black;
   }
@@ -63,6 +69,9 @@
 .game-list, .league-list {
   min-height: 8vh;
   margin-top: 10px;
+  a {
+    color: black;
+  }
 }
 
 .league-item {
@@ -82,34 +91,43 @@
 }
 
 .game-item {
-  height: 8vh;
+  height: 10vh;
+  margin: 10px 0;
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
   p {
-    font-size: 10px;
     margin: 0;
   }
   .logo {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    height: 5vh;
+    height: 6vh;
+    width: 10vw;
   }
   .team-name {
-    height: 5vh;
+    height: 10vh;
+    // flex-grow: 1.5;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     p {
-      font-size: 14px;
+      font-size: 16px;
+      margin-top: 5px;
     }
   }
   .datetime {
     height: 5vh;
     display: flex;
+    // flex-grow: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  a {
-    color: black;
+    margin: 2.5vh 0;
+    p {
+      font-size: 15px;
+    }
   }
 }
