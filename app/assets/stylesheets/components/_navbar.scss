@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .navbar-title {
@@ -21,7 +22,6 @@
 .navbar-wagon-brand {
   font-size: 30px;
   color: white;
-
 }
 
 .navbar-wagon-brand:hover{
@@ -38,7 +38,7 @@
 
 .navbar-wagon-right {
   color: white;
-  }
+}
 
 /* Basic navbar item */
 .navbar-wagon-item {
