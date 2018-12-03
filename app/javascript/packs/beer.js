@@ -35,8 +35,7 @@ document.addEventListener("click", (event) => {
       $('#liquid') // Empty beer!
       .animate({
         height: '-=6.2vh'
-      },
-      500);
+      }, 430);
 
       $('.beer-foam') // Foam to bottom!
       .animate({
@@ -228,6 +227,9 @@ document.addEventListener("click", (event) => {
           });
         }, DURATION / 2);
       })();
-    console.log("test")
+      setTimeout(function(){
+        window.history.back()
+      }, 7000);
+
     }
   });
