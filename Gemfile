@@ -8,6 +8,11 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis', '3.0.0'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'sinatra', :require => nil
+gem 'slim'
+gem 'rest-client', '~> 2.0', '>= 2.0.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
