@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_131237) do
+ActiveRecord::Schema.define(version: 2018_12_03_133959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 2018_11_30_131237) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "prognoses", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "user_id"
+    t.integer "team_a_score"
+    t.integer "team_b_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_prognoses_on_game_id"
+    t.index ["user_id"], name: "index_prognoses_on_user_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "logo"
@@ -88,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_131237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.integer "score", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -103,4 +115,6 @@ ActiveRecord::Schema.define(version: 2018_11_30_131237) do
   add_foreign_key "games", "teams", column: "team_b_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
+  add_foreign_key "prognoses", "games"
+  add_foreign_key "prognoses", "users"
 end

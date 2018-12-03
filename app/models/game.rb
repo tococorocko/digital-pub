@@ -3,6 +3,7 @@ class Game < ApplicationRecord
   belongs_to :team_b, class_name: 'Team'
   belongs_to :league
   has_many :chats, dependent: :destroy
+  has_many :prognoses
   validates :kick_off_time, presence: true
 
   after_create :generate_chat

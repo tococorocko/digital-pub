@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :chats, through: :messages
   has_many :favorite_leagues, dependent: :destroy
   has_many :favorite_teams, dependent: :destroy
+  has_many :prognoses, dependent: :destroy
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
 end
