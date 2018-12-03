@@ -228,6 +228,6 @@ document.addEventListener("click", (event) => {
           });
         }, DURATION / 2);
       })();
-
+    console.log("test")
     }
   });
