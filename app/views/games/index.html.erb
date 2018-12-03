@@ -1,29 +1,10 @@
 <div class="leagues-choice">
   <% leagues_array = League.all %>
   <% leagues_array.each do |league| %>
-    <div class="<%= "underline" if params[:league].to_i == league.id %>">
-      <%= link_to league.name, games_path(league: league) %>
-    </div>
+  <div class="<%= "underline" if params[:league].to_i == league.id %>">
+    <%= link_to league.name, games_path(league: league) %>
+  </div>
   <% end %>
-</div>
-
-
-
-
-<div class="matches">
-  <% @games_1.each do |g| %>
-    <div class="match">
-      <div class="col-xs-5">
-        <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-        <% if g.team_a.name.length <= 16 %>
-          <p><%= g.team_a.name %></p>
-        <% else %>
-          <p><%= g.team_a.name[0..12] %>...</p>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-
 </div>
 
 
@@ -33,41 +14,46 @@
   </div>
   <div class="game-list match-list">
     <% if @games_1.count == 0 %>
-      <h2 class='text-center'>No live games now</h2>
+    <h2 class='text-center'>No live games now</h2>
     <% else %>
-      <% @games_1.each do |g| %>
+    <% @games_1.each do |g| %>
 
-        <div class="row">
+    <div class="row">
 
-        <div class='game-item'>
-          <%= link_to game_chats_path(g) do %>
-            <div class="col-xs-5 team-name">
-              <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-              <% if g.team_a.name.length <= 16 %>
-                <p><%= g.team_a.name %></p>
-              <% else %>
-                <p><%= g.team_a.name[0..12] %>...</p>
-              <% end %>
-            </div>
-
-            <div class="col-xs-2 datetime">
-              <p style="font-size: 14px"><%= g.kick_off_time.strftime("%H:%M") %></p>
-            </div>
-
-            <div class="col-xs-5 team-name">
-            <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-              <% if g.team_b.name.length <= 16 %>
-              <p><%= g.team_b.name %></p>
-              <% else %>
-              <p><%= g.team_b.name[0..12] %>...</p>
-              <% end %>
-            </div>
+      <div class='game-item'>
+        <%= link_to game_chats_path(g) do %>
+        <div class="col-xs-5 team-name">
+          <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+          <% if g.team_a.name.length <= 16 %>
+          <p><%= g.team_a.name %></p>
+          <% else %>
+          <p><%= g.team_a.name[0..12] %>...</p>
           <% end %>
         </div>
 
-      </div>
+        <div class="col-xs-2 datetime">
+          <% if g.kick_off_time.to_date == Date.today %>
+          <p><strong>Today</strong></p>
+          <% elsif g.kick_off_time.to_date == Date.tomorrow %>
+          <p><strong>Tomorrow</strong></p>
+          <% else %>
+          <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
+          <% end %>
+          <p><%= g.kick_off_time.strftime("%H:%M") %></p>
+        </div>
 
-      <% end %>
+        <div class="col-xs-5 team-name">
+          <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+          <% if g.team_b.name.length <= 16 %>
+          <p><%= g.team_b.name %></p>
+          <% else %>
+          <p><%= g.team_b.name[0..12] %>...</p>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
     <% end %>
   </div>
 
@@ -75,30 +61,39 @@
     <h2>Next games</h2>
   </div>
   <div class="game-list">
-      <% @games_2.each do |g| %>
+    <% @games_2.each do |g| %>
     <div class='game-item'>
-          <div class="col-xs-4 team-name">
-            <% if g.team_a.name.length <= 16 %>
-              <p><%= g.team_a.name %></p>
-            <% else %>
-              <p><%= g.team_a.name[0..12] %>...</p>
-            <% end %>
-          </div>
-          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-          <div class="col-xs-2 datetime">
-            <p style="font-size: 10px"><%= g.kick_off_time.strftime("%d-%b") %></p>
-            <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
-          </div>
-          <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-          <div class="col-xs-4 team-name">
-            <% if g.team_b.name.length <= 16 %>
-            <p><%= g.team_b.name %></p>
-            <% else %>
-            <p><%= g.team_b.name[0..12] %>...</p>
-            <% end %>
-          </div>
+
+      <div class="col-xs-5 team-name">
+        <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+        <% if g.team_a.name.length <= 16 %>
+        <p><%= g.team_a.name %></p>
+        <% else %>
+        <p><%= g.team_a.name[0..13] %>...</p>
+        <% end %>
+      </div>
+
+      <div class="col-xs-2 datetime">
+        <% if g.kick_off_time.to_date == Date.today %>
+        <p><strong>Today</strong></p>
+        <% elsif g.kick_off_time.to_date == Date.tomorrow %>
+        <p><strong>Tomorrow</strong></p>
+        <% else %>
+        <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
+        <% end %>
+        <p><%= g.kick_off_time.strftime("%H:%M") %></p>
+      </div>
+
+      <div class="col-xs-5 team-name">
+        <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+        <% if g.team_b.name.length <= 18 %>
+        <p><%= g.team_b.name %></p>
+        <% else %>
+        <p><%= g.team_b.name[0..15] %>...</p>
+        <% end %>
+      </div>
     </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
 
