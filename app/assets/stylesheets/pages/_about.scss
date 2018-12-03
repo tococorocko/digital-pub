@@ -1,7 +1,18 @@
 .wrapper-about {
   background-size: cover;
-  height: 100vh;
+  height: 88vh;
+}
+
+.text-container {
+  height: 88vh;
   h2 {
-    margin-top: 24px;
+    margin-top: 0;
   }
+  overflow: scroll;
+}
+
+.text-content {
+  width: 75vw;
+  padding: 20px 0;
+  margin: auto;
 }
