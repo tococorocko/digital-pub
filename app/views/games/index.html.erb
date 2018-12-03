@@ -7,6 +7,26 @@
   <% end %>
 </div>
 
+
+
+
+<div class="matches">
+  <% @games_1.each do |g| %>
+    <div class="match">
+      <div class="col-xs-5">
+        <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+        <% if g.team_a.name.length <= 16 %>
+          <p><%= g.team_a.name %></p>
+        <% else %>
+          <p><%= g.team_a.name[0..12] %>...</p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+
 <div class="games">
   <div class="title today-list">
     <h2>Live games</h2>
@@ -16,21 +36,26 @@
       <h2 class='text-center'>No live games now</h2>
     <% else %>
       <% @games_1.each do |g| %>
+
+        <div class="row">
+
         <div class='game-item'>
           <%= link_to game_chats_path(g) do %>
-            <div class="col-xs-4 team-name">
+            <div class="col-xs-5 team-name">
+              <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
               <% if g.team_a.name.length <= 16 %>
                 <p><%= g.team_a.name %></p>
               <% else %>
                 <p><%= g.team_a.name[0..12] %>...</p>
               <% end %>
             </div>
-            <div class="col-xs-1 logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+
             <div class="col-xs-2 datetime">
-              <p style="font-size: 10px"><%= g.kick_off_time.strftime("%H:%M") %></p>
+              <p style="font-size: 14px"><%= g.kick_off_time.strftime("%H:%M") %></p>
             </div>
-            <div class="col-xs-1 logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-            <div class="col-xs-4 team-name">
+
+            <div class="col-xs-5 team-name">
+            <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
               <% if g.team_b.name.length <= 16 %>
               <p><%= g.team_b.name %></p>
               <% else %>
@@ -39,6 +64,9 @@
             </div>
           <% end %>
         </div>
+
+      </div>
+
       <% end %>
     <% end %>
   </div>
