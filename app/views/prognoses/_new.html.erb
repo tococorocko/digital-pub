@@ -1,0 +1,14 @@
+<%= simple_form_for [@game, @prognosis] do |f| %>
+    <button type="button" class="btn btn-digital-pub-green" data-toggle="modal" data-target="#exampleModal">
+      What's your prognosis?
+    </button>
+
+    <div class="modal-body">
+      <%= f.input :team_a_score %>
+      <%= f.input :team_b_score %>
+    </div>
+
+    <div class="modal-footer">
+      <%= f.button :submit, class:'btn btn-digital-pub-green' %>
+    </div>
+<% end %>
