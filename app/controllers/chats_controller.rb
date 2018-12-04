@@ -4,6 +4,9 @@ class ChatsController < ApplicationController
   def index
     @game = Game.find(params[:game_id])
     @chats = Chat.all
+    @prognosis = Prognosis.new
+    @prog = []
+    current_user.prognoses.each { |p| @prog << p if p.game == @game }
   end
 
   def show
