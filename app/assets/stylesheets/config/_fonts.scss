@@ -1,10 +1,10 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|PT+Sans+Narrow");
+@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|PT+Sans+Narrow|PT+Sans");
 
 // Define fonts for body and headers
 $body-font: "PT Sans Narrow", "Helvetica", "sans-serif";
 $headers-font: "Arvo", "Helvetica", "sans-serif";
 
 h2 {
-font-size: 20px !important;
+font-size: 20px;
 }

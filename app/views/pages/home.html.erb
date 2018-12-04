@@ -10,7 +10,7 @@
 
     <div class="top-games">
       <div class="title">
-        <h2>My top games</h2>
+        <h2>MY TOP GAMES</h2>
       </div>
 
       <div class="game-list">
@@ -19,11 +19,6 @@
           <div class='game-item'>
             <div class="col-xs-5 team-name text-center">
               <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-              <% if g.team_a.name.length <= 22 %>
-                <p><%= g.team_a.name %></p>
-              <% else %>
-                <p><%= g.team_a.name[0..21] %>...</p>
-              <% end %>
             </div>
 
             <div class="col-xs-2 datetime text-center">
@@ -34,16 +29,11 @@
               <% else %>
                 <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
               <% end %>
-              <p><%= g.kick_off_time.strftime("%H:%M") %></p>
+              <p  style="color: rgb(120,120,120);"><%= g.kick_off_time.strftime("%H:%M") %></p>
             </div>
 
             <div class="col-xs-5 team-name text-center">
               <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-              <% if g.team_b.name.length <= 22 %>
-                <p><%= g.team_b.name %></p>
-              <% else %>
-                <p><%= g.team_b.name[0..21] %>...</p>
-              <% end %>
             </div>
           </div>
         <% end %>
@@ -55,7 +45,7 @@
 
   <div class="leagues">
     <div class="title">
-      <h2>Choose your league</h2>
+      <h2>CHOOSE YOUR LEAGUE</h2>
     </div>
 
     <div class="league-list">
