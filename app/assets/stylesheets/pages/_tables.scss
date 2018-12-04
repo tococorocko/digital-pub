@@ -30,8 +30,8 @@
   background-size: cover;
   position: relative;
   height: 15vh;
-  margin: 5px 15px 5px 5px;
-  width: 110px;
+  margin: 5px 5px 5px 0;
+  min-width: 120px;
 }
 
 .card-tables-logo {
@@ -45,26 +45,28 @@
 }
 
 .card-tables-beer {
+  position: absolute;
   height: 8vh;
-  position: absolute;
   top: 3.5vh;
-  left: 4.5vh;
-}
-
-
-.card-tables-table {
-  position: absolute;
-  height: 15vh;
-  position:absolute;
   left:0;
   right:0;
   margin-left:auto;
   margin-right:auto;
 }
 
-  .card-team p {
+
+.card-tables-table {
+  position: absolute;
+  height: 15vh;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.card-team p {
   font-size: 20px;
-  margin: 0px;
+  margin: 0 15px;
   color: black;
 }
 
