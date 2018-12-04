@@ -69,25 +69,25 @@ puts 'Teams created'
 league_1 = League.new({
   name: "La liga"
 })
-league_1.logo = "https://res.cloudinary.com/digital-pub/image/upload/v1543329234/La_liga.png"
+league_1.logo = "http://res.cloudinary.com/digital-pub/image/upload/c_pad,h_380,w_380/v1543329234/La_liga.png"
 league_1.save
 
 league_2 = League.new({
   name: "Premier League"
 })
-league_2.logo = "http://res.cloudinary.com/digital-pub/image/upload/v1543333633/Premier_League_Logo.png"
+league_2.logo = "http://res.cloudinary.com/digital-pub/image/upload/v1543333633/Premier_League_Logo2.png"
 league_2.save
 
 league_3 = League.new({
   name: "Bundesliga"
 })
-league_3.logo = "http://res.cloudinary.com/digital-pub/image/upload/v1543333995/BundesLiga.png"
+league_3.logo = "http://res.cloudinary.com/digital-pub/image/upload/v1543333995/BundesLiga2.png"
 league_3.save
 
 league_4 = League.new({
   name: "Serie A"
 })
-league_4.logo = "https://res.cloudinary.com/digital-pub/image/upload/c_fit,w_750/v1543329234/Serie_A_Logo__ab_2018.png"
+league_4.logo = "https://res.cloudinary.com/digital-pub/image/upload/c_pad,h_380,w_380/v1543329234/Serie_A_Logo__ab_2018.png"
 league_4.save
 
 puts 'Leagues created'
