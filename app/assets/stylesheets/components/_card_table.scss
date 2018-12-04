@@ -98,7 +98,8 @@ a:hover {
   align-items: center;
   margin: 3px 0;
   & input {
-    width: 100px;
+    border: 1px solid rgb(190,190,190);
+    width: 50px;
     & [type='number']::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
