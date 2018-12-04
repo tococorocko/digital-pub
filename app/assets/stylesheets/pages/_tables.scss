@@ -26,6 +26,10 @@
   align-items: center;
 }
 
+#first-card-table {
+  margin-top: 24px;
+}
+
 .card-item {
   background-size: cover;
   position: relative;
@@ -73,4 +77,47 @@
 a:hover {
   opacity: 0.6;
   text-decoration: none;
+}
+
+.btn-modal-green {
+  margin: 10px 18vw;
+}
+
+.prognosis-container {
+  background-color: $light-gray;
+  margin: 10px 20px;
+  border-radius: 4px;
+  padding: 3px;
+  opacity: 0.7;
+  h5 {
+    margin: 0;
+  }
+}
+
+.prognosis-boxes .form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 0;
+  & input {
+    width: 100px;
+    & [type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+#prognosisInput input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.prognosis-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.prognosis-dialog {
+  width: 80vw;
+  margin: auto;
+  margin-top: 5vh;
 }

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :favorite_teams, only: [:new, :create, :destroy]
   resources :favorite_leagues, only: [:new, :create, :destroy]
   resources :games, only: [:index, :show] do
+    resources :prognoses, only: [:new, :create]
     resources :chats, only: [:index, :show] do
       resources :messages, only: :create
     end
