@@ -1,14 +1,20 @@
 <%= simple_form_for [@game, @prognosis] do |f| %>
-    <button type="button" class="btn btn-digital-pub-green" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-digital-pub-green btn-modal-green" data-toggle="modal" data-target="#prognosisInput">
       What's your prognosis?
     </button>
 
-    <div class="modal-body">
-      <%= f.input :team_a_score %>
-      <%= f.input :team_b_score %>
-    </div>
+    <div class="modal" id="prognosisInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog prognosis-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body prognosis-boxes">
+            <%= f.input :team_a_score, label: @game.team_a.name, html: { class:'form-inline' } %>
+            <%= f.input :team_b_score, label: @game.team_b.name, html: { class:'form-inline' } %>
+          </div>
 
-    <div class="modal-footer">
-      <%= f.button :submit, class:'btn btn-digital-pub-green' %>
+          <div class="modal-footer prognosis-footer">
+            <%= f.button :submit, class:'btn btn-digital-pub-green' %>
+          </div>
+        </div>
+      </div>
     </div>
 <% end %>

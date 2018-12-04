@@ -5,13 +5,12 @@ class PrognosesController < ApplicationController
   end
 
   def create
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
     @prognosis = Prognosis.new(params_prognosis)
-    if @prognosis.save
-      redirect_to 'chats/index'
-    else
-      render 'new'
-    end
+    @prognosis.game = @game
+    @prognosis.user = current_user
+    @prognosis.save
+    redirect_to game_chats_path
   end
 
   private

@@ -5,9 +5,16 @@
     <h2>Choose your table</h2>
   </div>
 
-  <%= render 'prognoses/new' %>
+  <% unless @prog.any? %>
+    <%= render 'prognoses/new' %>
+  <% else %>
+    <div class="prognosis-container text-center">
+      <h5>Your prognosis</h5>
+      <%= @game.team_a.name %>: <%= @prog.first.team_a_score %> - <%= @game.team_b.name %>: <%= @prog.first.team_b_score %>
+    </div>
+  <% end %>
 
-  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_a_id)), class: "card-tables" do%>
+  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_a_id)), class: "card-tables", id:"first-card-table" do%>
     <div class="card-item">
       <%= image_tag "table.svg", class:"card-tables-table" %>
 
