@@ -7,27 +7,73 @@ League.destroy_all
 # USERS #######################################
 
 user_1 = User.create!({
-  username: "truxxu",
+  username: "ValderramaHairStyle",
   email: "dtrujilo69@gmail.com",
-  password: "dtrujilo69@gmail.com"
+  password: "dtrujilo69@gmail.com",
+  score: 69
 })
 
 user_2 = User.create!({
-  username: "ameliebou",
+  username: "DieuZizou",
   email: "amelie.boudier01@gmail.com",
-  password: "amelie.boudier01@gmail.com"
+  password: "amelie.boudier01@gmail.com",
+  score: 74
 })
 
 user_3 = User.create!({
   username: "tococorocko",
   email: "luccakaiser@gmail.com",
-  password: "luccakaiser@gmail.com"
+  password: "luccakaiser@gmail.com",
+  score: 58
 })
 
 user_4 = User.create!({
-  username: "hilsenrath",
+  username: "TeleSantana",
   email: "mario.hilsenrath@gmail.com",
-  password: "mario.hilsenrath@gmail.com"
+  password: "mario.hilsenrath@gmail.com",
+  score: 49
+})
+
+user_5 = User.create!({
+  username: "CR7_special_guy",
+  email: "u1@gmail.com",
+  password: "u1@gmail.com",
+  score: 72
+})
+
+user_6 = User.create!({
+  username: "R9_monster",
+  email: "u2@gmail.com",
+  password: "u2@gmail.com",
+  score: 40
+})
+
+user_7 = User.create!({
+  username: "NJ_cry_baby",
+  email: "u3@gmail.com",
+  password: "u3@gmail.com",
+  score: 24
+})
+
+user_8 = User.create!({
+  username: "maradona_82",
+  email: "u4@gmail.com",
+  password: "u4@gmail.com",
+  score: 23
+})
+
+user_9 = User.create!({
+  username: "Kaiser_Beckenbauer",
+  email: "u5@gmail.com",
+  password: "u5@gmail.com",
+  score: 70
+})
+
+user_10 = User.create!({
+  username: "best_George",
+  email: "u6@gmail.com",
+  password: "u6@gmail.com",
+  score: 55
 })
 
 puts 'Users created'
