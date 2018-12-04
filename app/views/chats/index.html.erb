@@ -10,13 +10,26 @@
   <% else %>
     <div class="prognosis-container text-center">
       <h5>Your prognosis</h5>
-      <% if @game.team_a.name.length < 18 && @game.team_a.name.length < 18 %>
-        <%= @game.team_a.name %> <strong><%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %></strong> <%= @game.team_b.name %>
-      <% elsif @game.team_a.name.length < 18 && @game.team_b.name.length >= 18 %>
-        <%= @game.team_a.name %> <strong><%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %></strong> <%= @game.team_b.name[0..15] %>...
-      <% else %>
-        <%= @game.team_a.name[0..15] %>... <strong><%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %></strong> <%= @game.team_b.name[0..15] %>...
-      <% end %>
+
+      <div class="prognosis-score">
+        <div class="col-xs-5 no-padding">
+          <% if @game.team_a.name.length <= 15 %>
+            <p><%= @game.team_a.name %></p>
+          <% else %>
+            <p><%= @game.team_a.name[0..12] %>...</p>
+          <% end %>
+        </div>
+        <div class="col-xs-2 no-padding">
+          <%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %>
+        </div>
+        <div class="col-xs-5 no-padding">
+          <% if @game.team_b.name.length <= 15 %>
+            <p><%= @game.team_b.name %></p>
+          <% else %>
+            <p><%= @game.team_b.name[0..12] %>...</p>
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 
