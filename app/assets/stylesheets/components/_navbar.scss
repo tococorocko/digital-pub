@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.navbar-logo {
+  padding-left: 10px;
+}
+
 .navbar-title {
   color: white;
   margin-bottom: 5px;
@@ -43,7 +47,7 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 5px;
+  // padding: 0 5px;
   color: white;
 }
 

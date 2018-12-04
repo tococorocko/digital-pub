@@ -3,36 +3,43 @@
   <div>
     <% if !current_page?("/") %>
       <%= link_to :back, class: "navbar-wagon-brand" do %>
-        <i class="fas fa-caret-left"></i>
+      <%= image_tag "dpub-arrow.png", alt: "Back arrow", width: "14px"; %>
+<!--    <i class="fas fa-caret-left"></i> -->
       <% end %>
     <% end %>
-<%# end %>
 </div>
+<div class="navbar-logo">
 <%= link_to root_path do %>
   <%= image_tag "dpub-logo.png", alt: "Digital Pub Logo", height: "70vh"; %>
   <!-- <h3 class="navbar-title">Digital Pub</h3> -->
 <% end %>
+</div>
+
   <!-- Right Navigation -->
 <div class="navbar-wagon-right">
   <% if user_signed_in? %>
 
   <div class="navbar-wagon-item">
     <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <div data-toggle="dropdown">
+      <%= image_tag "dpub-arrow-down.png", alt: "Burger Menu",  height: "14px"; %>
+      </div>
+      <!--       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i> -->
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
           <%= link_to preferences_path do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <i class="fa fa-user"> </i> <%= t(".profile", default: "Profile") %>
           <% end %>
         </li>
         <li>
           <%= link_to pages_about_path do %>
-            <i class="fas fa-beer"></i>  <%= t(".about", default: "About the Digital Pub") %>
+            <i class="fas fa-beer"> </i>  <%= t(".about", default: "About the Digital Pub") %>
           <% end %>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <i class="fas fa-sign-out-alt"> </i>
+            <%= t(".sign_out", default: "Log out") %>
           <% end %>
         </li>
       </ul>
