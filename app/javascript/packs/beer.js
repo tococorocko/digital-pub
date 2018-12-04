@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.pour') //Pour Me Another Drink, Bartender!
     .delay(1000)
     .animate({
-      height: '50vh'
+      height: '40vh'
       }, 1500)
     .delay(1600)
     .slideUp(500);
@@ -12,13 +12,13 @@ $(document).ready(function() {
   $('#liquid') // I Said Fill 'Er Up!
     .delay(2000)
     .animate({
-      height: '40vh'
+      height: '30vh'
     }, 2500);
 
   $('.beer-foam') // Keep that Foam Rollin' Toward the Top! Yahooo!
     .delay(2000)
     .animate({
-      bottom: '40vh'
+      bottom: '30vh'
       }, 2500);
 
   setTimeout(function(){
@@ -34,12 +34,12 @@ document.addEventListener("click", (event) => {
 
       $('#liquid') // Empty beer!
       .animate({
-        height: '-=6.2vh'
+        height: '-=4.3vh'
       }, 430);
 
       $('.beer-foam') // Foam to bottom!
       .animate({
-        bottom: '-=6.2vh'
+        bottom: '-=4.3vh'
       }, 430);
       clicks += 1;
     } else {
