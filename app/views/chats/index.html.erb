@@ -10,7 +10,13 @@
   <% else %>
     <div class="prognosis-container text-center">
       <h5>Your prognosis</h5>
-      <%= @game.team_a.name %>: <%= @prog.first.team_a_score %> - <%= @game.team_b.name %>: <%= @prog.first.team_b_score %>
+      <% if @game.team_a.name.length < 18 && @game.team_a.name.length < 18 %>
+        <%= @game.team_a.name %> <strong><%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %></strong> <%= @game.team_b.name %>
+      <% elsif @game.team_a.name.length < 18 && @game.team_b.name.length >= 18 %>
+        <%= @game.team_a.name %> <strong><%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %></strong> <%= @game.team_b.name[0..15] %>...
+      <% else %>
+        <%= @game.team_a.name[0..15] %>... <strong><%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %></strong> <%= @game.team_b.name[0..15] %>...
+      <% end %>
     </div>
   <% end %>
 
