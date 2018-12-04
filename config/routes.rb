@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/about'
   get 'pages/rank'
+  get 'pages/beer'
 
   resources :preferences, only: [:index]
   resources :favorite_teams, only: [:new, :create, :destroy]
@@ -15,4 +16,9 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => "/cable"
 
+  # Sidekiq Web UI, only for admins.
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

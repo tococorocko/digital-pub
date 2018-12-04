@@ -24,5 +24,4 @@ class PagesController < ApplicationController
     end
     @rank.sort! { |a,b| b.score <=> a.score }
   end
-
 end
