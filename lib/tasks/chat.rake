@@ -12,7 +12,7 @@ namespace :chat do
           chat.update(online: true)
         elsif Time.now.utc - game.kick_off_time > 21600
           puts 'Destroying chats'
-          chat.destroy
+          # chat.destroy
         else
           puts 'Bringing chats offline'
           chat.update(online: false)
