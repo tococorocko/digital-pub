@@ -26,6 +26,7 @@
   margin: 3vh 20px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 .card-item {
@@ -78,9 +79,15 @@ a:hover {
 }
 
 .btn-modal-green {
-  margin: 3vh 18vw;
+  margin: 3vh 20%;
   margin-bottom: 0;
   box-shadow: 0px 0px 5px rgb(200,200,200);
+}
+
+.prog-btn-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .prognosis-container {

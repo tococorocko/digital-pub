@@ -5,68 +5,71 @@
     <h2>CHOOSE YOUR TABLE</h2>
   </div>
 
-  <% unless @prog.any? %>
-    <%= render 'prognoses/new' %>
-  <% else %>
-    <div class="prognosis-container text-center">
-      <h5>Your prediction</h5>
+  <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
 
-      <div class="prognosis-score">
-        <div class="col-xs-5 no-padding">
-          <% if @game.team_a.name.length <= 15 %>
-            <p><%= @game.team_a.name %></p>
-          <% else %>
-            <p><%= @game.team_a.name[0..12] %>...</p>
-          <% end %>
-        </div>
-        <div class="col-xs-2 no-padding">
-          <%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %>
-        </div>
-        <div class="col-xs-5 no-padding">
-          <% if @game.team_b.name.length <= 15 %>
-            <p><%= @game.team_b.name %></p>
-          <% else %>
-            <p><%= @game.team_b.name[0..12] %>...</p>
-          <% end %>
+    <% unless @prog.any? %>
+      <div class="prog-btn-container">
+        <%= render 'prognoses/new' %>
+      </div>
+    <% else %>
+      <div class="prognosis-container text-center">
+        <h5>Your prediction</h5>
+
+        <div class="prognosis-score">
+          <div class="col-xs-5 no-padding">
+            <% if @game.team_a.name.length <= 15 %>
+              <p><%= @game.team_a.name %></p>
+            <% else %>
+              <p><%= @game.team_a.name[0..12] %>...</p>
+            <% end %>
+          </div>
+          <div class="col-xs-2 no-padding">
+            <%= @prog.first.team_a_score %> : <%= @prog.first.team_b_score %>
+          </div>
+          <div class="col-xs-5 no-padding">
+            <% if @game.team_b.name.length <= 15 %>
+              <p><%= @game.team_b.name %></p>
+            <% else %>
+              <p><%= @game.team_b.name[0..12] %>...</p>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_a_id)), class: "card-tables", id:"first-card-table" do%>
-    <div class="card-item">
-      <%= image_tag "table.svg", class:"card-tables-table" %>
+    <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_a_id)), class: "card-tables", id:"first-card-table" do%>
+      <div class="card-item">
+        <%= image_tag "table.svg", class:"card-tables-table" %>
 
-      <%= image_tag Team.find(@game.team_a_id).logo, class:"card-tables-logo" %>
-    </div>
-    <div class="card-team">
-      <p><%= Team.find(@game.team_a_id).name %></p>
-    </div>
-  <% end  %>
+        <%= image_tag Team.find(@game.team_a_id).logo, class:"card-tables-logo" %>
+      </div>
+      <div class="card-team">
+        <p><%= Team.find(@game.team_a_id).name %></p>
+      </div>
+    <% end  %>
 
-  <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_b_id)), class: "card-tables" do%>
-    <div class="card-item">
-      <%= image_tag "table.svg", class:"card-tables-table" %>
-      <!-- Logo on Table -->
-      <%= image_tag Team.find(@game.team_b_id).logo, class:"card-tables-logo" %>
-    </div>
-    <div class="card-team">
-      <p><%= Team.find(@game.team_b_id).name %></p>
-    </div>
-  <% end %>
+    <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_b_id)), class: "card-tables" do%>
+      <div class="card-item">
+        <%= image_tag "table.svg", class:"card-tables-table" %>
+        <!-- Logo on Table -->
+        <%= image_tag Team.find(@game.team_b_id).logo, class:"card-tables-logo" %>
+      </div>
+      <div class="card-team">
+        <p><%= Team.find(@game.team_b_id).name %></p>
+      </div>
+    <% end %>
 
 
-  <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.find_by_team_id(nil)), class: "card-tables" do%>
-    <div class="card-item">
-      <%= image_tag "table.svg", class:"card-tables-table" %>
-      <!-- Logo on Table -->
-      <%= image_tag "beer.svg", class:"card-tables-beer" %>
-    </div>
-    <div class="card-team">
-      <p>"Stammtisch"</p>
-    </div>
-  <% end %>
+    <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.find_by_team_id(nil)), class: "card-tables" do%>
+      <div class="card-item">
+        <%= image_tag "table.svg", class:"card-tables-table" %>
+        <!-- Logo on Table -->
+        <%= image_tag "beer.svg", class:"card-tables-beer" %>
+      </div>
+      <div class="card-team">
+        <p>"Stammtisch"</p>
+      </div>
+    <% end %>
+  </div>
+
 </div>
-
-
-<!-- Logo on Table -->

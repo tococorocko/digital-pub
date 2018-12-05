@@ -1,7 +1,7 @@
   <div class="message <%= user_is_messages_author ? "right" : "" %>">
   <% if message.user.present? && message.user.admin? %>
     <div class="user-name">
-      Bartender - <%= (message.created_at + 60.minutes).strftime("%H:%M") %>
+      Bartender - <%= message.created_at.strftime("%H:%M") %>
     </div>
     <div class="card-liveticker">
       <div class="card-liveticker-text">
@@ -13,7 +13,7 @@
 
 <% else %>
     <div class="user-name">
-      <%= message.user.username %> - <%= (message.created_at + 60.minutes).strftime("%H:%M") %>
+      <%= message.user.username %> - <%= message.created_at.strftime("%H:%M") %>
     </div>
     <div class="message-content">
       <%= message.content %>
@@ -22,5 +22,4 @@
   </div>
 
 <% end %>
-
 
