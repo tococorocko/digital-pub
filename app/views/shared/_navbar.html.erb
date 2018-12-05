@@ -37,6 +37,12 @@
           <% end %>
         </li>
         <li>
+          <%= link_to pages_rank_path do %>
+            <i class="fas fa-sort-amount-down"> </i>
+            <%= t(".rank", default: "Ranking") %>
+          <% end %>
+        </li>
+        <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt"> </i>
             <%= t(".sign_out", default: "Log out") %>
