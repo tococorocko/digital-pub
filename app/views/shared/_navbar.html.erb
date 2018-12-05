@@ -13,7 +13,7 @@
 </div>
 <div class="navbar-logo">
 <%= link_to root_path do %>
-  <%= image_tag "dpub-logo.png", alt: "Digital Pub Logo", height: "70vh"; %>
+  <%= image_tag "dpub-logo.png", alt: "Digital Pub Logo", class: "dpub-logo"; %>
   <!-- <h3 class="navbar-title">Digital Pub</h3> -->
 <% end %>
 </div>
@@ -35,14 +35,14 @@
           <% end %>
         </li>
         <li>
-          <%= link_to pages_about_path do %>
-            <i class="fas fa-beer"> </i>  <%= t(".about", default: "About the Digital Pub") %>
-          <% end %>
-        </li>
-        <li>
           <%= link_to pages_rank_path do %>
             <i class="fas fa-sort-amount-down"> </i>
             <%= t(".rank", default: "Ranking") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to pages_about_path do %>
+            <i class="fas fa-beer"> </i>  <%= t(".about", default: "About the Digital Pub") %>
           <% end %>
         </li>
         <li>
