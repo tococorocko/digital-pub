@@ -1,4 +1,26 @@
-<div class="message <%= user_is_messages_author ? "right" : "" %>">
-  <div class="user-name"><%= message.user.username %> - <%= (message.created_at + 60.minutes).strftime("%H:%M") %></div>
-  <div class="message-content"><%= message.content %></div>
-</div>
+  <div class="message <%= user_is_messages_author ? "right" : "" %>">
+  <% if message.user.present? && message.user.admin? %>
+    <div class="user-name">
+      Bartender - <%= (message.created_at + 60.minutes).strftime("%H:%M") %>
+    </div>
+    <div class="card-liveticker">
+      <div class="card-liveticker-text">
+        <%= message.content %>
+        <p>Beer on the house! 🍺</p>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+    <div class="user-name">
+      <%= message.user.username %> - <%= (message.created_at + 60.minutes).strftime("%H:%M") %>
+    </div>
+    <div class="message-content">
+      <%= message.content %>
+    </div>
+
+  </div>
+
+<% end %>
+
+

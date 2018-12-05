@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :chat
   validates :content, presence: true, allow_blank: false
   after_create :broadcast_message
@@ -14,7 +14,8 @@ class Message < ApplicationRecord
         partial: "messages/message",
         locals: { message: self, user_is_messages_author: false }
       ),
-      current_user_id: user.id
+      current_user_id: user&.id,
+      admin: user&.admin
     })
   end
 end
