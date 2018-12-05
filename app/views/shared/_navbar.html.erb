@@ -2,10 +2,13 @@
   <!-- Logo -->
   <div>
     <% if !current_page?("/") %>
-      <%= link_to :back, class: "navbar-wagon-brand" do %>
+    <a href="javascript:history.back()">
+
+      <%#= link_to :back, class: "navbar-wagon-brand" do %>
       <%= image_tag "dpub-arrow.png", alt: "Back arrow", width: "14px"; %>
+    </a>
 <!--    <i class="fas fa-caret-left"></i> -->
-      <% end %>
+      <%# end %>
     <% end %>
 </div>
 <div class="navbar-logo">
