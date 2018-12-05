@@ -9,13 +9,15 @@ namespace :chat do
       chats.each do |chat|
         if game.kick_off_time - Time.now.utc < 3600 && game.kick_off_time - Time.now.utc > 0 || Time.now.utc - game.kick_off_time > 0 && Time.now.utc - game.kick_off_time < 21600
           puts 'Bringing chats online'
-          chat.online == true
+          chat.update(online: true)
         elsif Time.now.utc - game.kick_off_time > 21600
-          puts 'Destroying chats'
-          chat.destroy
+          puts 'Bringing chats offline'
+          chat.update(online: false)
+          #puts 'Destroying chats'
+          # chat.destroy
         else
           puts 'Bringing chats offline'
-          chat.online == false
+          chat.update(online: false)
         end
       end
     end
