@@ -9,25 +9,25 @@
 
 <div class="games">
   <div class="title today-list">
-    <h2>Live games</h2>
+    <h2>LIVE GAMES</h2>
   </div>
-  <div class="game-list match-list">
     <% if @games_1.count == 0 %>
-      <h2 class='text-center'>No live games now</h2>
+      <h2 class='text-center' id='no-live-games'>No live games now</h2>
     <% else %>
+  <div class="game-list">
       <% @games_1.each do |g| %>
         <div class='game-item'>
           <%= link_to game_chats_path(g) do %>
             <div class="col-xs-5 team-name text-center">
               <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-              <% if g.team_a.name.length <= 22 %>
+              <% if g.team_a.name.length <= 21 %>
                 <p><%= g.team_a.name %></p>
               <% else %>
-                <p><%= g.team_a.name[0..21] %>...</p>
+                <p><%= g.team_a.name[0..18] %>...</p>
               <% end %>
             </div>
 
-            <div class="col-xs-2 datetime">
+            <div class="col-xs-2 datetime font-narrow">
               <% if g.kick_off_time.to_date == Date.today %>
                 <p><strong>Today</strong></p>
               <% elsif g.kick_off_time.to_date == Date.tomorrow %>
@@ -40,10 +40,10 @@
 
             <div class="col-xs-5 team-name text-center">
               <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-              <% if g.team_b.name.length <= 22 %>
+              <% if g.team_b.name.length <= 21 %>
                 <p><%= g.team_b.name %></p>
               <% else %>
-                <p><%= g.team_b.name[0..21] %>...</p>
+                <p><%= g.team_b.name[0..18] %>...</p>
               <% end %>
             </div>
 
@@ -54,22 +54,22 @@
   </div>
 
   <div class="title today-list">
-    <h2>Next games</h2>
+    <h2>NEXT GAMES</h2>
   </div>
   <div class="game-list">
       <% @games_2.each do |g| %>
-    <div class='game-item'>
+    <div class='game-item font-narrow'>
 
             <div class="col-xs-5 team-name text-center">
               <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-              <% if g.team_a.name.length <= 22 %>
+              <% if g.team_a.name.length <= 21 %>
                 <p><%= g.team_a.name %></p>
               <% else %>
-                <p><%= g.team_a.name[0..21] %>...</p>
+                <p><%= g.team_a.name[0..18] %>...</p>
               <% end %>
             </div>
 
-            <div class="col-xs-2 datetime">
+            <div class="col-xs-2 datetime" id="font-narrow">
               <% if g.kick_off_time.to_date == Date.today %>
                 <p><strong>Today</strong></p>
               <% elsif g.kick_off_time.to_date == Date.tomorrow %>
@@ -82,10 +82,10 @@
 
             <div class="col-xs-5 team-name text-center">
               <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
-              <% if g.team_b.name.length <= 22 %>
+              <% if g.team_b.name.length <= 21 %>
                 <p><%= g.team_b.name %></p>
               <% else %>
-                <p><%= g.team_b.name[0..21] %>...</p>
+                <p><%= g.team_b.name[0..18] %>...</p>
               <% end %>
             </div>
 
