@@ -40,11 +40,15 @@
 }
 
 .icon-group {
-  margin: 10px 0;
+  margin: 0;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  h6 {
+    margin: 0;
+  }
   p {
     margin-bottom: 0;
   }
@@ -67,6 +71,10 @@
   a {
     color: black;
   }
+}
+
+.welcome {
+  width: 100vw;
 }
 
 .game-list, .league-list {
@@ -93,12 +101,10 @@
   }
 }
 
+
 .game-item {
   height: 10vh;
   margin: 10px 0;
-  // display: flex;
-  // justify-content: space-around;
-  // align-items: center;
   p {
     margin: 0;
   }
@@ -111,7 +117,6 @@
   }
   .team-name {
     height: 10vh;
-    // flex-grow: 1.5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,5 +139,17 @@
       font-size: 17px;
       font-family: "PT Sans";
     }
+  }
+}
+
+.text-red {
+  color: $red;
+}
+.no-click-game {
+  p {
+    color: rgb(150,150,150);
+  }
+  .logo {
+    opacity: 0.5;
   }
 }
