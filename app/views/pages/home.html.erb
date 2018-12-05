@@ -16,27 +16,51 @@
       <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
         <div class="game-list">
         <% @games[0..2].each do |g| %>
-          <%= link_to game_chats_path(g) do %>
-            <div class='game-item'>
-              <div class="col-xs-5 team-name text-center">
-                <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-              </div>
 
-              <div class="col-xs-2 datetime text-center">
-                <% if g.kick_off_time.to_date == Date.today %>
-                  <p><strong>Today</strong></p>
-                <% elsif g.kick_off_time.to_date == Date.tomorrow %>
-                  <p><strong>Tomorrow</strong></p>
-                <% else %>
-                  <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
-                <% end %>
-                <p  style="color: rgb(120,120,120);"><%= g.kick_off_time.strftime("%H:%M") %></p>
-              </div>
+          <% if g.chats.first.online %>
 
-              <div class="col-xs-5 team-name text-center">
-                <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+            <%= link_to game_chats_path(g) do %>
+              <div class='game-item'>
+                <div class="col-xs-5 team-name text-center">
+                  <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+                </div>
+
+                <div class="col-xs-2 datetime text-center">
+                    <p class='text-red'><strong>Live</strong></p>
+                  <p><%= g.kick_off_time.strftime("%H:%M") %></p>
+                </div>
+
+                <div class="col-xs-5 team-name text-center">
+                  <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+                </div>
+              </div>
+            <% end %>
+
+          <% else %>
+
+            <div class="no-click-game">
+              <div class='game-item'>
+                <div class="col-xs-5 team-name text-center">
+                  <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+                </div>
+
+                <div class="col-xs-2 datetime text-center">
+                  <% if g.kick_off_time.to_date == Date.today %>
+                    <p><strong>Today</strong></p>
+                  <% elsif g.kick_off_time.to_date == Date.tomorrow %>
+                    <p><strong>Tomorrow</strong></p>
+                  <% else %>
+                    <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
+                  <% end %>
+                  <p  style="color: rgb(120,120,120);"><%= g.kick_off_time.strftime("%H:%M") %></p>
+                </div>
+
+                <div class="col-xs-5 team-name text-center">
+                  <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+                </div>
               </div>
             </div>
+
           <% end %>
         <% end %>
         </div>
@@ -75,13 +99,15 @@
 
   <div class="welcome">
     <div class="title">
-      <h2>Welcome to the Digital Pub</h2>
+      <h2>WELCOME TO THE DIGITAL PUB</h2>
     </div>
 
     <div class="welcome-icons">
       <div class="icon-group">
-        <i class="fas fa-sign-in-alt"></i>
-        <p>Log in</p>
+        <div>
+          <h6><i class="fas fa-sign-in-alt"></i> LOG IN</h6>
+        </div>
+        <p>Sign up or log in to the Digital Pub</p>
       </div>
 
       <div class="icon-group">
@@ -89,8 +115,10 @@
       </div>
 
       <div class="icon-group">
-        <i class="fas fa-futbol"></i>
-        <p>Choose your game</p>
+        <div>
+          <h6><i class="fas fa-futbol"></i> CHOOSE YOUR GAME</h6>
+        </div>
+        <p>Select the game you want to discuss about</p>
       </div>
 
       <div class="icon-group">
@@ -98,14 +126,17 @@
       </div>
 
       <div class="icon-group">
-        <i class="far fa-comments"></i>
-        <p>Chat</p>
+        <div>
+          <h6><i class="far fa-comments"></i> CHAT</h6>
+        </div>
+        <p>Chat with fans from all around the world</p>
       </div>
     </div>
-
-    <div class="welcome-text">
-      <%= link_to 'Sign up', new_user_registration_path, class:'btn-digital-pub-white btn-welcome' %>
-      <%= link_to 'Log in', new_user_session_path, class:'btn-digital-pub-white btn-welcome' %>
+    <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+      <div class="welcome-text">
+        <%= link_to 'Sign up', new_user_registration_path, class:'btn-digital-pub-white btn-welcome' %>
+        <%= link_to 'Log in', new_user_session_path, class:'btn-digital-pub-white btn-welcome' %>
+      </div>
     </div>
 
   </div>
