@@ -13,32 +13,35 @@
         <h2>MY TOP GAMES</h2>
       </div>
 
-      <div class="game-list">
-      <% @games[0..2].each do |g| %>
-        <%= link_to game_chats_path(g) do %>
-          <div class='game-item'>
-            <div class="col-xs-5 team-name text-center">
-              <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
-            </div>
+      <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+        <div class="game-list">
+        <% @games[0..2].each do |g| %>
+          <%= link_to game_chats_path(g) do %>
+            <div class='game-item'>
+              <div class="col-xs-5 team-name text-center">
+                <div class="logo" style="background-image: url('<%= g.team_a.logo %>')"></div>
+              </div>
 
-            <div class="col-xs-2 datetime text-center">
-              <% if g.kick_off_time.to_date == Date.today %>
-                <p><strong>Today</strong></p>
-              <% elsif g.kick_off_time.to_date == Date.tomorrow %>
-                <p><strong>Tomorrow</strong></p>
-              <% else %>
-                <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
-              <% end %>
-              <p  style="color: rgb(120,120,120);"><%= g.kick_off_time.strftime("%H:%M") %></p>
-            </div>
+              <div class="col-xs-2 datetime text-center">
+                <% if g.kick_off_time.to_date == Date.today %>
+                  <p><strong>Today</strong></p>
+                <% elsif g.kick_off_time.to_date == Date.tomorrow %>
+                  <p><strong>Tomorrow</strong></p>
+                <% else %>
+                  <p><strong><%= g.kick_off_time.strftime("%d-%b") %></strong></p>
+                <% end %>
+                <p  style="color: rgb(120,120,120);"><%= g.kick_off_time.strftime("%H:%M") %></p>
+              </div>
 
-            <div class="col-xs-5 team-name text-center">
-              <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+              <div class="col-xs-5 team-name text-center">
+                <div class="logo" style="background-image: url('<%= g.team_b.logo %>')"></div>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+        </div>
       </div>
+
     </div>
 
   <% end %>
@@ -48,14 +51,16 @@
       <h2>CHOOSE YOUR LEAGUE</h2>
     </div>
 
-    <div class="league-list">
-      <% @leagues.each do |l| %>
-      <div class="col-xs-3">
-        <div class="league-item" style="background-image: url('<%= l.logo %>') ">
-          <%= link_to '', games_path(league: l) %>
+    <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+      <div class="league-list">
+        <% @leagues.each do |l| %>
+        <div class="col-xs-3">
+          <div class="league-item" style="background-image: url('<%= l.logo %>') ">
+            <%= link_to '', games_path(league: l) %>
+          </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 

@@ -1,10 +1,11 @@
 <%= simple_form_for [@game, @prognosis] do |f| %>
-    <button type="button" class="btn btn-digital-pub-green btn-modal-green" data-toggle="modal" data-target="#prognosisInput">
-      What's your prediction?
-    </button>
+  <button type="button" class="btn btn-digital-pub-green btn-modal-green" data-toggle="modal" data-target="#prognosisInput">
+    What's your prediction?
+  </button>
 
-    <div class="modal" id="prognosisInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog prognosis-dialog" role="document">
+  <div class="modal" id="prognosisInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog prognosis-dialog" role="document">
+      <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
         <div class="modal-content">
           <div class="modal-body prognosis-boxes">
             <%= f.input :team_a_score, label: @game.team_a.name, html: { class:'form-inline' } %>
@@ -17,4 +18,5 @@
         </div>
       </div>
     </div>
+  </div>
 <% end %>

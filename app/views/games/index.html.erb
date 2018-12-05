@@ -11,10 +11,12 @@
   <div class="title today-list">
     <h2>LIVE GAMES</h2>
   </div>
-    <% if @games_1.count == 0 %>
-      <h2 class='text-center' id='no-live-games'>No live games now</h2>
-    <% else %>
-  <div class="game-list">
+
+  <% if @games_1.count == 0 %>
+    <h2 class='text-center' id='no-live-games'>No live games now</h2>
+  <% else %>
+
+  <div class="game-list col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
       <% @games_1.each do |g| %>
         <div class='game-item'>
           <%= link_to game_chats_path(g) do %>
@@ -56,7 +58,7 @@
   <div class="title today-list">
     <h2>NEXT GAMES</h2>
   </div>
-  <div class="game-list">
+  <div class="game-list col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
       <% @games_2.each do |g| %>
     <div class='game-item font-narrow'>
 
