@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@game.team_a.name} vs #{@game.team_b.name} on the #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Chat about the #{@game.team_a} vs #{@game.team_b} game! Starting time: #{@game.kick_off_time.strftime("%H-%M")} on #{@game.kick_off_time.strftime("%d-%b")}" %>
+
+
   <div class="background-pub" style="background-image: linear-gradient(-205deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.51) 50%), url('http://irishpubcompany.com/wp-content/uploads/2015/12/Capture1.jpg');">
 
 

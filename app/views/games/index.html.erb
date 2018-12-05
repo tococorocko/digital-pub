@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@league.name} | All coming games on the #{DEFAULT_META["meta_product_name"]}" %>
+
+
 <div class="leagues-choice">
   <% leagues_array = League.all %>
   <% leagues_array.each do |league| %>
