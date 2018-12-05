@@ -13,18 +13,19 @@ class GamesController < ApplicationController
     @games = Game.where(league: @league)
 
     @games.each do |g|
-      if g.chats.first.online == false
-        if g.kick_off_time.to_date == @date
-          old_game = g.kick_off_time.time - 60.minutes
-          if g.kick_off_time.time > old_game
-            @games_2 << g
-          end
-        elsif g.kick_off_time.to_date > @date && g.kick_off_time.to_date <= @max_date
-          @games_2 << g
-        end
+      #old_game = g.kick_off_time - 60.minutes
+
+      # TODAYS NEXT GAMES
+      if g.chats.first.online == false && g.kick_off_time.to_date == @date && g.kick_off_time > Time.now
+        @games_2 << g
+      # NEXT 5 DAYS GAMES
+      elsif g.kick_off_time.to_date > @date && g.kick_off_time.to_date <= @max_date
+        @games_2 << g
+      # ONLINE GAMES
       elsif g.chats.first.online == true
         @games_1 << g
       end
+    @games_2.sort! { |a,b| a.kick_off_time <=> b.kick_off_time }
     end
   end
 end
