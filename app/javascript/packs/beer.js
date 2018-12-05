@@ -24,7 +24,7 @@ $(document).ready(function() {
   setTimeout(function(){
     $('.tip')
     .css({"display": "block"})
-  }, 3000);
+  }, 3500);
 
 });
 
@@ -129,7 +129,7 @@ document.addEventListener("click", (event) => {
               SPRITE_WIDTH  : 9,
               SPRITE_HEIGHT : 16,
               PAPER_LENGTH  : 100,
-              DURATION      : 8000,
+              DURATION      : 7000,
               ROTATION_RATE : 50,
               COLORS        : [
                 "#EF5350",
@@ -229,7 +229,6 @@ document.addEventListener("click", (event) => {
       })();
       setTimeout(function(){
         window.history.back()
-      }, 7000);
-
+      }, 3000);
     }
-  });
+});

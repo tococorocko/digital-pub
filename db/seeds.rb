@@ -76,6 +76,8 @@ user_10 = User.create!({
   score: 55
 })
 
+User.create(username: 'Admin', email: 'admin@digital-pub.live', password: 'admin@digital-pub.live', admin: true )
+
 puts 'Users created'
 # TEAMS #######################################
 
