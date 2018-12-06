@@ -42,15 +42,19 @@
 .icon-group {
   margin: 0;
   margin-top: 10px;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   h6 {
-    margin: 0;
+    margin: 10px 0 0 0;
   }
   p {
     margin-bottom: 0;
+  }
+  i {
+    font-size: 50px;
   }
 }
 
@@ -64,7 +68,7 @@
 }
 
 .welcome-text {
-  margin: 20px;
+  // margin: 20px;
   text-align: center;
   display: flex;
   justify-content: space-around;
@@ -152,4 +156,27 @@
   .logo {
     opacity: 0.5;
   }
+}
+
+#myCarousel {
+  // padding: 40px 0;
+  height: 40vh;
+  .glyphicon-chevron-left:before, .glyphicon-chevron-right:before {
+    content: none !important;
+  }
+  .carousel-control.right {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgb(13, 115, 10) 150%);
+  }
+  .carousel-control.left {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.0001) 0%, rgb(13, 115, 10) 150%);
+  }
+  .item {
+  padding: 6vh 0;
+  }
+}
+
+.btn-wrapper {
+  height: 10vh;
+  padding: 2vh 0;
+  background-color: $green;
 }
