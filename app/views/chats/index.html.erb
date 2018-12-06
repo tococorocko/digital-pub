@@ -41,7 +41,7 @@
       </div>
     <% end %>
 
-    <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_a_id)), class: "card-tables", id:"first-card-table" do%>
+    <%= link_to game_chat_path(game_id: @game.id, id: @game.chat_for_team_a), class: "card-tables", id:"first-card-table" do%>
       <div class="card-item">
         <%= image_tag "table.svg", class:"card-tables-table" %>
 
@@ -52,7 +52,7 @@
       </div>
     <% end  %>
 
-    <%= link_to game_chat_path(game_id: @game.id, id: @chats.find_by_team_id(@game.team_b_id)), class: "card-tables" do%>
+    <%= link_to game_chat_path(game_id: @game.id, id: @game.chat_for_team_b), class: "card-tables" do%>
       <div class="card-item">
         <%= image_tag "table.svg", class:"card-tables-table" %>
         <!-- Logo on Table -->
@@ -64,7 +64,7 @@
     <% end %>
 
 
-    <%= link_to game_chat_path(game_id: @game.id, id: @game.chats.find_by_team_id(nil)), class: "card-tables" do%>
+    <%= link_to game_chat_path(game_id: @game.id, id: @game.chat_neutral), class: "card-tables" do%>
       <div class="card-item">
         <%= image_tag "table.svg", class:"card-tables-table" %>
         <!-- Logo on Table -->
