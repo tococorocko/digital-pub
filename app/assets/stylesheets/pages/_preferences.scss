@@ -13,6 +13,14 @@ ul {
 .form-dropdown {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-dropdown-list {
+  .form-group {
+    padding: 0;
+  }
 }
 
 .form-group {
@@ -25,22 +33,46 @@ ul {
 
 .fav-leagues_result {
   margin: 20px 0;
+  border-bottom: 1px solid rgb(150,150,150);
+  font-size: 18.5px;
 }
 
-  .favorite_league_league {
-    width: 240px !important;
-    padding: 0 5px 0 15px;
-  }
+.col-logo-fav {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  padding-left: 25px;
+}
 
-  .favorite_team_team {
-    width: 240px !important;
-    padding: 0 5px 0 15px;
-  }
+.col-name-fav {
+  padding: 0;
+  padding-left: 20px;
+}
+
+.fav-item {
+  padding-bottom: 50px;
+}
+
+.favorite_league_league {
+  width: 240px !important;
+  padding: 0 5px 0 15px;
+}
+
+.favorite_team_team {
+  width: 240px !important;
+  padding: 0 5px 0 15px;
+}
 
 .pref-heading {
-  margin: 10px
+  margin: 10px;
+  font-weight: normal !important;
 }
 
+.add-team-title {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
 
 .form-preferences {
   background: white;
