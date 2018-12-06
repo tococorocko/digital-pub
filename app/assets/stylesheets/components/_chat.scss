@@ -1,4 +1,5 @@
 .chat-name {
+  box-shadow: 0px 2px 9px #7d7d7d;
   background-color: $light-green;
   height: 10vh;
   display: flex;
@@ -69,7 +70,7 @@
 }
 
 #message_content {
-  width: 75vw;
+  width: 77vw;
   border-radius: 5px;
   &:focus {
     outline: none;

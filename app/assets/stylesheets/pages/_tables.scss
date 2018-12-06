@@ -4,6 +4,7 @@
 }
 
 .title-tables {
+  box-shadow: 0px 2px 9px #7d7d7d;
   background-color: $light-green;
   height: 10vh;
   width: 100vw;
@@ -19,7 +20,7 @@
 }
 
 .card-tables {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  box-shadow: 0px 2px 9px #7d7d7d;
   border-radius: 4px;
   background-color: white;
   opacity: 0.7;
@@ -33,12 +34,12 @@
   background-size: cover;
   position: relative;
   height: 15vh;
-  margin: 5px 5px 5px 0;
-  min-width: 120px;
+  margin: 5px 5px 5px 15px;
+  min-width: 70px;
 }
 
 .card-tables-logo {
-  height: 8vh;
+  height: 9vh;
   top: 3.5vh;
   position:absolute;
   left:0;
@@ -49,7 +50,7 @@
 
 .card-tables-beer {
   position: absolute;
-  height: 8vh;
+  height: 9vh;
   top: 3.5vh;
   left:0;
   right:0;
@@ -68,7 +69,8 @@
 }
 
 .card-team p {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bolder;
   margin: 0 15px;
   color: black;
 }
@@ -92,13 +94,13 @@ a:hover {
 
 .prognosis-container {
   background-color: $light-gray;
-  margin: 3vh 20px;
+  margin: 3vh 0px;
   border-radius: 4px;
   padding: 3px;
   opacity: 0.7;
   h5 {
-    margin: 0;
-    margin-top: 5px;
+    font-weight: bolder;
+    margin: 5px 0 15px 0;
   }
 }
 
@@ -111,6 +113,19 @@ a:hover {
       margin: 0;
     }
   }
+}
+
+.score {
+  font-weight: bolder;
+  font-size: 22px;
+  display: inline;
+  box-shadow: 0px 2px 9px #7d7d7d;
+  border-radius: 4px;
+  background-color: white;
+  // margin: 1vh 10px;
+  padding: 5px;
+  align-items: center;
+
 }
 
 .prognosis-boxes .form-group {
