@@ -20,4 +20,15 @@ class Game < ApplicationRecord
     chat_a.save
   end
 
+  def chat_for_team_a
+    chats.find_by(team_id: team_a_id)
+  end
+
+  def chat_for_team_b
+    chats.find_by(team_id: team_b_id)
+  end
+
+  def chat_neutral
+    chats.find_by(team_id: nil)
+  end
 end
