@@ -1,8 +1,8 @@
 <div class="form-dropdown">
-    <div>
+    <div style="display: none">
       <%= simple_form_for(@favoriteteam, :html => {:class => 'form-inline' }) do |f| %>
     </div>
-    <div>
+    <div class="form-dropdown-list">
       <%= f.association :team, input_html: {class: 'js-example-basic-single'}, label: false %>
     </div>
     <div>
