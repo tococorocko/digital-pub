@@ -39,7 +39,7 @@
     function timer() {
       setTimeout(function() {
         window.location='https://www.digital-pub.live/pages/beer'
-      }, 2000);
+      }, 7000);
     }
     scrollLastMessageIntoView();
     App['chat_<%= @chat.id %>'] = App.cable.subscriptions.create({ channel: 'ChatsChannel', chat_id: <%= @chat.id %> }, {
