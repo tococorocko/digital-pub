@@ -63,9 +63,9 @@
   color: $green;
 }
 
-.btn-welcome {
-  background-color: white;
-}
+// .btn-welcome {
+//   background-color: white;
+// }
 
 .welcome-text {
   // margin: 20px;
@@ -160,7 +160,7 @@
 
 #myCarousel {
   // padding: 40px 0;
-  height: 40vh;
+  height: 50vh;
   .glyphicon-chevron-left:before, .glyphicon-chevron-right:before {
     content: none !important;
   }
@@ -175,8 +175,8 @@
   }
 }
 
-.btn-wrapper {
-  height: 10vh;
-  padding: 2vh 0;
-  background-color: $green;
-}
+// .btn-wrapper {
+//   height: 10vh;
+//   padding: 2vh 0;
+//   background-color: $light-gray;
+// }

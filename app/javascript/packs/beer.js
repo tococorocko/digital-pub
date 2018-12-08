@@ -229,6 +229,6 @@ document.addEventListener("click", (event) => {
       })();
       setTimeout(function(){
         window.history.back()
-      }, 7000);
+      }, 4000);
     }
 });
