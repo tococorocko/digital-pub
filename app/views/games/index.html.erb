@@ -19,6 +19,7 @@
     <h2 class='text-center' id='no-live-games'>No live games now</h2>
   <% else %>
 
+
   <div class="game-list col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
       <% @games_1.each do |g| %>
         <div class='game-item'>
@@ -34,7 +35,8 @@
 
             <div class="col-xs-2 datetime font-narrow">
               <% if g.kick_off_time.to_date == Date.today %>
-                <p><strong>Today</strong></p>
+                <!-- <p><strong>Today</strong></p> -->
+                <p class='text-red'><strong>Live</strong></p>
               <% elsif g.kick_off_time.to_date == Date.tomorrow %>
                 <p><strong>Tomorrow</strong></p>
               <% else %>
@@ -59,7 +61,7 @@
   </div>
 
   <div class="title today-list">
-    <h2>NEXT GAMES</h2>
+    <h2>UPCOMING GAMES</h2>
   </div>
   <div class="game-list col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
       <% @games_2.each do |g| %>

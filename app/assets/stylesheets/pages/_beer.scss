@@ -1,4 +1,3 @@
-
 .beer {
   background-color: black;
   height: 88vh;
@@ -11,6 +10,8 @@
   overflow: hidden;
   position: relative;
   width: 248px;
+  cursor: pointer;
+
 }
 
 #beer-container div { position: absolute; }

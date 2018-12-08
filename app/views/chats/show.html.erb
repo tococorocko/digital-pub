@@ -28,7 +28,11 @@
 <div id="create-message">
   <%= simple_form_for [@chat.game, @chat, Message.new], html: { style: 'display:flex' },remote: true do |f| %>
     <%= f.input :content, label: false %>
-    <%= f.submit ">", class:'btn btn-round-green' %>
+
+    <%= button_tag :submit, class: "btn btn-round-green" do %>
+        <%= image_tag "dpub-arrow-right.png", alt: "Arrow", width: "14px"; %>
+    <% end %>
+    <%#= f.submit, class:'btn btn-round-green' do %>
   <% end %>
 
 </div>
