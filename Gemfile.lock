@@ -209,7 +209,7 @@ GEM
       redis-namespace
     sidekiq-failures (0.2.2)
       sidekiq (>= 2.9.0)
-    simple_form (4.1.0)
+    simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     sinatra (2.0.4)
